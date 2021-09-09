@@ -3,23 +3,67 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060AE36326E7AD3100D8F881 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AE36226E7AD3100D8F881 /* SearchView.swift */; };
+		060AE36526E7B10700D8F881 /* CardGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AE36426E7B10700D8F881 /* CardGrid.swift */; };
+		060AE36A26E7B50900D8F881 /* SingleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AE36926E7B50900D8F881 /* SingleCardView.swift */; };
 		062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A5D70265F1802009FACCB /* MTGWizardApp.swift */; };
-		062A5D73265F1802009FACCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A5D72265F1802009FACCB /* ContentView.swift */; };
+		062A5D73265F1802009FACCB /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A5D72265F1802009FACCB /* LandingView.swift */; };
 		062A5D75265F1803009FACCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062A5D74265F1803009FACCB /* Assets.xcassets */; };
 		062A5D78265F1803009FACCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062A5D77265F1803009FACCB /* Preview Assets.xcassets */; };
+		063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A799426EA9DB000C0195C /* SearchViewModel.swift */; };
+		063BE02E26E3DCF900E9AC0B /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063BE02D26E3DCF900E9AC0B /* CollectionView.swift */; };
+		063BE03126E3DD3000E9AC0B /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 063BE03026E3DD3000E9AC0B /* ScryfallKit */; };
+		063BE03326E3E17E00E9AC0B /* CardListList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063BE03226E3E17E00E9AC0B /* CardListList.swift */; };
+		067FBE4226812ECA0073BC79 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067FBE4126812ECA0073BC79 /* AsyncImageView.swift */; };
+		06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C0526E7F6D5005C35C0 /* CardDescription.swift */; };
+		06F77C0B26E82E20005C35C0 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C0A26E82E20005C35C0 /* MockData.swift */; };
+		06F77C1026E82EB9005C35C0 /* NarsetEnlightenedMaster.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06F77C0F26E82EB9005C35C0 /* NarsetEnlightenedMaster.json */; };
+		06F77C1226E82EE1005C35C0 /* AkkiLavaRunner.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06F77C1126E82EE1005C35C0 /* AkkiLavaRunner.json */; };
+		06F77C1426E82EFB005C35C0 /* HalvarGodOfBattle.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06F77C1326E82EFB005C35C0 /* HalvarGodOfBattle.json */; };
+		06F77C1D26E841B1005C35C0 /* SingleCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C1C26E841B1005C35C0 /* SingleCardViewModel.swift */; };
+		06F77C1F26E84841005C35C0 /* ManaCost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C1E26E84841005C35C0 /* ManaCost.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		06F77C1626E82F7D005C35C0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Creatures;
+			dstSubfolderSpec = 7;
+			files = (
+				06F77C1226E82EE1005C35C0 /* AkkiLavaRunner.json in CopyFiles */,
+				06F77C1026E82EB9005C35C0 /* NarsetEnlightenedMaster.json in CopyFiles */,
+				06F77C1426E82EFB005C35C0 /* HalvarGodOfBattle.json in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		060AE36226E7AD3100D8F881 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		060AE36426E7B10700D8F881 /* CardGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGrid.swift; sourceTree = "<group>"; };
+		060AE36926E7B50900D8F881 /* SingleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardView.swift; sourceTree = "<group>"; };
 		062A5D6D265F1802009FACCB /* MTGWizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTGWizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		062A5D70265F1802009FACCB /* MTGWizardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGWizardApp.swift; sourceTree = "<group>"; };
-		062A5D72265F1802009FACCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		062A5D72265F1802009FACCB /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		062A5D74265F1803009FACCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		062A5D77265F1803009FACCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		062A5D79265F1803009FACCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		063A799426EA9DB000C0195C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		063BE02D26E3DCF900E9AC0B /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		063BE03226E3E17E00E9AC0B /* CardListList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListList.swift; sourceTree = "<group>"; };
+		067FBE4126812ECA0073BC79 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		06F77C0526E7F6D5005C35C0 /* CardDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDescription.swift; sourceTree = "<group>"; };
+		06F77C0A26E82E20005C35C0 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		06F77C0F26E82EB9005C35C0 /* NarsetEnlightenedMaster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NarsetEnlightenedMaster.json; sourceTree = "<group>"; };
+		06F77C1126E82EE1005C35C0 /* AkkiLavaRunner.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AkkiLavaRunner.json; sourceTree = "<group>"; };
+		06F77C1326E82EFB005C35C0 /* HalvarGodOfBattle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HalvarGodOfBattle.json; sourceTree = "<group>"; };
+		06F77C1C26E841B1005C35C0 /* SingleCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleCardViewModel.swift; sourceTree = "<group>"; };
+		06F77C1E26E84841005C35C0 /* ManaCost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManaCost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +71,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063BE03126E3DD3000E9AC0B /* ScryfallKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060AE36126E7AD2400D8F881 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				060AE36226E7AD3100D8F881 /* SearchView.swift */,
+				060AE36426E7B10700D8F881 /* CardGrid.swift */,
+				063A799426EA9DB000C0195C /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		060AE36826E7B4F800D8F881 /* SingleCardView */ = {
+			isa = PBXGroup;
+			children = (
+				06F77C1C26E841B1005C35C0 /* SingleCardViewModel.swift */,
+				060AE36926E7B50900D8F881 /* SingleCardView.swift */,
+				06F77C0526E7F6D5005C35C0 /* CardDescription.swift */,
+			);
+			path = SingleCardView;
+			sourceTree = "<group>";
+		};
+		062979D7268255E000ADFDC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		062A5D64265F1802009FACCB = {
 			isa = PBXGroup;
 			children = (
 				062A5D6F265F1802009FACCB /* MTGWizard */,
 				062A5D6E265F1802009FACCB /* Products */,
+				062979D7268255E000ADFDC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +125,11 @@
 		062A5D6F265F1802009FACCB /* MTGWizard */ = {
 			isa = PBXGroup;
 			children = (
+				06F77C0C26E82E61005C35C0 /* MockData */,
+				0659446726A6077600A8A03B /* Common */,
+				0659446326A603E400A8A03B /* Scenes */,
 				062A5D70265F1802009FACCB /* MTGWizardApp.swift */,
-				062A5D72265F1802009FACCB /* ContentView.swift */,
+				062A5D72265F1802009FACCB /* LandingView.swift */,
 				062A5D74265F1803009FACCB /* Assets.xcassets */,
 				062A5D79265F1803009FACCB /* Info.plist */,
 				062A5D76265F1803009FACCB /* Preview Content */,
@@ -69,6 +145,69 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		063BE02C26E3DCEA00E9AC0B /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				063BE02D26E3DCF900E9AC0B /* CollectionView.swift */,
+				063BE03226E3E17E00E9AC0B /* CardListList.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		0659446326A603E400A8A03B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				060AE36826E7B4F800D8F881 /* SingleCardView */,
+				060AE36126E7AD2400D8F881 /* Search */,
+				063BE02C26E3DCEA00E9AC0B /* Collection */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0659446726A6077600A8A03B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0659446826A6077C00A8A03B /* Components */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0659446826A6077C00A8A03B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				067FBE4126812ECA0073BC79 /* AsyncImageView.swift */,
+				06F77C1E26E84841005C35C0 /* ManaCost.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		06F77C0C26E82E61005C35C0 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				06F77C0D26E82E6A005C35C0 /* JSON */,
+				06F77C0A26E82E20005C35C0 /* MockData.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		06F77C0D26E82E6A005C35C0 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				06F77C0E26E82E9D005C35C0 /* Cards */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		06F77C0E26E82E9D005C35C0 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				06F77C0F26E82EB9005C35C0 /* NarsetEnlightenedMaster.json */,
+				06F77C1126E82EE1005C35C0 /* AkkiLavaRunner.json */,
+				06F77C1326E82EFB005C35C0 /* HalvarGodOfBattle.json */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,12 +218,16 @@
 				062A5D69265F1802009FACCB /* Sources */,
 				062A5D6A265F1802009FACCB /* Frameworks */,
 				062A5D6B265F1802009FACCB /* Resources */,
+				06F77C1626E82F7D005C35C0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MTGWizard;
+			packageProductDependencies = (
+				063BE03026E3DD3000E9AC0B /* ScryfallKit */,
+			);
 			productName = MTGWizard;
 			productReference = 062A5D6D265F1802009FACCB /* MTGWizard.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 062A5D64265F1802009FACCB;
+			packageReferences = (
+				063BE02F26E3DD3000E9AC0B /* XCRemoteSwiftPackageReference "ScryfallKit" */,
+			);
 			productRefGroup = 062A5D6E265F1802009FACCB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +284,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				062A5D73265F1802009FACCB /* ContentView.swift in Sources */,
+				067FBE4226812ECA0073BC79 /* AsyncImageView.swift in Sources */,
+				062A5D73265F1802009FACCB /* LandingView.swift in Sources */,
+				06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */,
+				06F77C1F26E84841005C35C0 /* ManaCost.swift in Sources */,
+				060AE36526E7B10700D8F881 /* CardGrid.swift in Sources */,
+				063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */,
+				063BE02E26E3DCF900E9AC0B /* CollectionView.swift in Sources */,
 				062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */,
+				060AE36326E7AD3100D8F881 /* SearchView.swift in Sources */,
+				06F77C1D26E841B1005C35C0 /* SingleCardViewModel.swift in Sources */,
+				060AE36A26E7B50900D8F881 /* SingleCardView.swift in Sources */,
+				063BE03326E3E17E00E9AC0B /* CardListList.swift in Sources */,
+				06F77C0B26E82E20005C35C0 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +485,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		063BE02F26E3DD3000E9AC0B /* XCRemoteSwiftPackageReference "ScryfallKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JacobHearst/ScryfallKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		063BE03026E3DD3000E9AC0B /* ScryfallKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 063BE02F26E3DD3000E9AC0B /* XCRemoteSwiftPackageReference "ScryfallKit" */;
+			productName = ScryfallKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 062A5D65265F1802009FACCB /* Project object */;
 }

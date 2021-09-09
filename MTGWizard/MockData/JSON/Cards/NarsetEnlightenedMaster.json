@@ -1,0 +1,128 @@
+{
+    "object": "card",
+    "id": "f210adb7-b389-4672-a3eb-0ced9bfe190c",
+    "oracle_id": "aeaf7768-ed67-487d-8506-e667babb88ba",
+    "multiverse_ids": [
+        386616
+    ],
+    "mtgo_id": 54252,
+    "mtgo_foil_id": 54253,
+    "tcgplayer_id": 92805,
+    "cardmarket_id": 269143,
+    "name": "Narset, Enlightened Master",
+    "lang": "en",
+    "released_at": "2014-09-26",
+    "uri": "https://api.scryfall.com/cards/f210adb7-b389-4672-a3eb-0ced9bfe190c",
+    "scryfall_uri": "https://scryfall.com/card/ktk/190/narset-enlightened-master?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+        "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/f/2/f210adb7-b389-4672-a3eb-0ced9bfe190c.jpg?1562795852",
+        "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/2/f210adb7-b389-4672-a3eb-0ced9bfe190c.jpg?1562795852",
+        "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/f/2/f210adb7-b389-4672-a3eb-0ced9bfe190c.jpg?1562795852",
+        "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/f/2/f210adb7-b389-4672-a3eb-0ced9bfe190c.png?1562795852",
+        "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/2/f210adb7-b389-4672-a3eb-0ced9bfe190c.jpg?1562795852",
+        "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/2/f210adb7-b389-4672-a3eb-0ced9bfe190c.jpg?1562795852"
+    },
+    "mana_cost": "{3}{U}{R}{W}",
+    "cmc": 6.0,
+    "type_line": "Legendary Creature — Human Monk",
+    "oracle_text": "First strike, hexproof\nWhenever Narset, Enlightened Master attacks, exile the top four cards of your library. Until end of turn, you may cast noncreature spells from among those cards without paying their mana costs.",
+    "power": "3",
+    "toughness": "2",
+    "colors": [
+        "R",
+        "U",
+        "W"
+    ],
+    "color_identity": [
+        "R",
+        "U",
+        "W"
+    ],
+    "keywords": [
+        "Hexproof",
+        "First strike"
+    ],
+    "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "legal",
+        "commander": "legal",
+        "brawl": "not_legal",
+        "historicbrawl": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal"
+    },
+    "games": [
+        "paper",
+        "mtgo"
+    ],
+    "reserved": false,
+    "foil": true,
+    "nonfoil": true,
+    "finishes": [
+        "nonfoil",
+        "foil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": false,
+    "variation": false,
+    "set_id": "6c7a715c-ded9-449e-89b0-c665773e9c3c",
+    "set": "ktk",
+    "set_name": "Khans of Tarkir",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/6c7a715c-ded9-449e-89b0-c665773e9c3c",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aktk&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/ktk?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/f210adb7-b389-4672-a3eb-0ced9bfe190c/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aaeaf7768-ed67-487d-8506-e667babb88ba&unique=prints",
+    "collector_number": "190",
+    "digital": false,
+    "rarity": "mythic",
+    "watermark": "jeskai",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Magali Villeneuve",
+    "artist_ids": [
+        "9e6a55ae-be4d-4c23-a2a5-135737ffd879"
+    ],
+    "illustration_id": "dd1829ce-e817-4f98-acb7-c9aee732ea9f",
+    "border_color": "black",
+    "frame": "2015",
+    "full_art": false,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "edhrec_rank": 3308,
+    "prices": {
+        "usd": "1.26",
+        "usd_foil": "6.03",
+        "usd_etched": null,
+        "eur": "0.87",
+        "eur_foil": "4.95",
+        "tix": "0.02"
+    },
+    "related_uris": {
+        "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=386616",
+        "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Narset%2C+Enlightened+Master&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Narset%2C+Enlightened+Master&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "edhrec": "https://edhrec.com/route/?cc=Narset%2C+Enlightened+Master",
+        "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Narset%2C+Enlightened+Master"
+    },
+    "purchase_uris": {
+        "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=92805&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Narset%2C+Enlightened+Master&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+        "cardhoarder": "https://www.cardhoarder.com/cards/54252?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+}
