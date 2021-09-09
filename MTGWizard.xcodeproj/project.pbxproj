@@ -15,9 +15,7 @@
 		062A5D75265F1803009FACCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062A5D74265F1803009FACCB /* Assets.xcassets */; };
 		062A5D78265F1803009FACCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062A5D77265F1803009FACCB /* Preview Assets.xcassets */; };
 		063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A799426EA9DB000C0195C /* SearchViewModel.swift */; };
-		063BE02E26E3DCF900E9AC0B /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063BE02D26E3DCF900E9AC0B /* CollectionView.swift */; };
 		063BE03126E3DD3000E9AC0B /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 063BE03026E3DD3000E9AC0B /* ScryfallKit */; };
-		063BE03326E3E17E00E9AC0B /* CardListList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063BE03226E3E17E00E9AC0B /* CardListList.swift */; };
 		067FBE4226812ECA0073BC79 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067FBE4126812ECA0073BC79 /* AsyncImageView.swift */; };
 		06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C0526E7F6D5005C35C0 /* CardDescription.swift */; };
 		06F77C0B26E82E20005C35C0 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C0A26E82E20005C35C0 /* MockData.swift */; };
@@ -54,8 +52,6 @@
 		062A5D77265F1803009FACCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		062A5D79265F1803009FACCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		063A799426EA9DB000C0195C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		063BE02D26E3DCF900E9AC0B /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		063BE03226E3E17E00E9AC0B /* CardListList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListList.swift; sourceTree = "<group>"; };
 		067FBE4126812ECA0073BC79 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		06F77C0526E7F6D5005C35C0 /* CardDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDescription.swift; sourceTree = "<group>"; };
 		06F77C0A26E82E20005C35C0 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -145,21 +141,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		063BE02C26E3DCEA00E9AC0B /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				063BE02D26E3DCF900E9AC0B /* CollectionView.swift */,
-				063BE03226E3E17E00E9AC0B /* CardListList.swift */,
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
 		0659446326A603E400A8A03B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				060AE36826E7B4F800D8F881 /* SingleCardView */,
 				060AE36126E7AD2400D8F881 /* Search */,
-				063BE02C26E3DCEA00E9AC0B /* Collection */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -290,12 +276,10 @@
 				06F77C1F26E84841005C35C0 /* ManaCost.swift in Sources */,
 				060AE36526E7B10700D8F881 /* CardGrid.swift in Sources */,
 				063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */,
-				063BE02E26E3DCF900E9AC0B /* CollectionView.swift in Sources */,
 				062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */,
 				060AE36326E7AD3100D8F881 /* SearchView.swift in Sources */,
 				06F77C1D26E841B1005C35C0 /* SingleCardViewModel.swift in Sources */,
 				060AE36A26E7B50900D8F881 /* SingleCardView.swift in Sources */,
-				063BE03326E3E17E00E9AC0B /* CardListList.swift in Sources */,
 				06F77C0B26E82E20005C35C0 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

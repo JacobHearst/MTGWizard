@@ -18,7 +18,7 @@ struct LandingView: View {
                     Text("Search")
                 }
                 .tag(0)
-            CollectionView()
+            Text("Collection")
                 .tabItem {
                     Image(systemName: "tray.2.fill")
                     Text("Collection")

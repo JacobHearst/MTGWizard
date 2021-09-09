@@ -35,6 +35,7 @@ struct SearchView: View {
                 if let err = viewModel.error {
                     Text(String(describing: err))
                         .padding(.top)
+                        .multilineTextAlignment(.center)
                 }
 
                 CardGrid(cards: viewModel.results)

@@ -31,17 +31,24 @@ class ImageLoader: ObservableObject {
 struct AsyncImage: View {
     @ObservedObject var imageLoader:ImageLoader
     @State var image: UIImage = UIImage()
+    @State var didLoad = false
 
     init(url: URL) {
         imageLoader = ImageLoader(url: url)
     }
 
     var body: some View {
-        Image(uiImage: image)
-            .resizable()
-            .scaledToFit()
-            .onReceive(imageLoader.didChange) { data in
-                self.image = UIImage(data: data) ?? UIImage()
+        ZStack {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFit()
+                .onReceive(imageLoader.didChange) { data in
+                    self.didLoad = true
+                    self.image = UIImage(data: data) ?? UIImage()
+                }
+            if !didLoad {
+                ProgressView()
             }
+        }
     }
 }

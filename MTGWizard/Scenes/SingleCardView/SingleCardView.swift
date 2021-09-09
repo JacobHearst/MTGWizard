@@ -30,7 +30,7 @@ struct SingleCardView: View {
 
                 if let url = viewModel.cardImageURL {
                     AsyncImage(url: url)
-                        .frame(maxHeight: geometry.size.width * 0.9)
+//                        .frame(maxHeight: geometry.size.width)
                         .rotationEffect(viewModel.cardRotationAngle)
                 } else {
                     Text("No image for \(viewModel.cardName)")
