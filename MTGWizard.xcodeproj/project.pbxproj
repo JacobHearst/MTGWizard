@@ -16,15 +16,36 @@
 		062A5D78265F1803009FACCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062A5D77265F1803009FACCB /* Preview Assets.xcassets */; };
 		063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A799426EA9DB000C0195C /* SearchViewModel.swift */; };
 		063BE03126E3DD3000E9AC0B /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 063BE03026E3DD3000E9AC0B /* ScryfallKit */; };
-		067FBE4226812ECA0073BC79 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067FBE4126812ECA0073BC79 /* AsyncImageView.swift */; };
+		06666A792700ED4D008087EB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06666A782700ED4D008087EB /* Errors.swift */; };
+		066A1E1A27205D2F00211FA8 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A1E1927205D2F00211FA8 /* ColorSelectorView.swift */; };
+		066A1E1D27205D6400211FA8 /* ColorSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A1E1C27205D6400211FA8 /* ColorSelectorViewModel.swift */; };
+		069813E5286F905500D00C2E /* RulesLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E4286F905500D00C2E /* RulesLandingView.swift */; };
+		069813E8286F906700D00C2E /* RulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E7286F906700D00C2E /* RulesViewModel.swift */; };
+		069813EB286F909A00D00C2E /* RulesKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813EA286F909A00D00C2E /* RulesKit.swift */; };
+		069813F0286F935900D00C2E /* SubcategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813EF286F935900D00C2E /* SubcategoriesView.swift */; };
+		069813F2286F937E00D00C2E /* RuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813F1286F937E00D00C2E /* RuleView.swift */; };
+		069813F4286F950900D00C2E /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813F3286F950900D00C2E /* RulesView.swift */; };
+		06A5F61026FACA0D00E422A8 /* RulingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A5F60F26FACA0D00E422A8 /* RulingsList.swift */; };
+		06BFD8C3271B842A00DCF862 /* SearchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFD8C2271B842A00DCF862 /* SearchFilterView.swift */; };
+		06BFD8C5271B845400DCF862 /* SearchFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFD8C4271B845400DCF862 /* SearchFilterViewModel.swift */; };
 		06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C0526E7F6D5005C35C0 /* CardDescription.swift */; };
 		06F77C0B26E82E20005C35C0 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C0A26E82E20005C35C0 /* MockData.swift */; };
 		06F77C1026E82EB9005C35C0 /* NarsetEnlightenedMaster.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06F77C0F26E82EB9005C35C0 /* NarsetEnlightenedMaster.json */; };
 		06F77C1226E82EE1005C35C0 /* AkkiLavaRunner.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06F77C1126E82EE1005C35C0 /* AkkiLavaRunner.json */; };
 		06F77C1426E82EFB005C35C0 /* HalvarGodOfBattle.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06F77C1326E82EFB005C35C0 /* HalvarGodOfBattle.json */; };
 		06F77C1D26E841B1005C35C0 /* SingleCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C1C26E841B1005C35C0 /* SingleCardViewModel.swift */; };
-		06F77C1F26E84841005C35C0 /* ManaCost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C1E26E84841005C35C0 /* ManaCost.swift */; };
+		06F77C1F26E84841005C35C0 /* ManaCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C1E26E84841005C35C0 /* ManaCostView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06E7FC80270534F100802AC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 062A5D65265F1802009FACCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 062A5D6C265F1802009FACCB;
+			remoteInfo = MTGWizard;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		06F77C1626E82F7D005C35C0 /* CopyFiles */ = {
@@ -52,14 +73,26 @@
 		062A5D77265F1803009FACCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		062A5D79265F1803009FACCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		063A799426EA9DB000C0195C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		067FBE4126812ECA0073BC79 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		06666A782700ED4D008087EB /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		066A1E1927205D2F00211FA8 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
+		066A1E1C27205D6400211FA8 /* ColorSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorViewModel.swift; sourceTree = "<group>"; };
+		069813E4286F905500D00C2E /* RulesLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesLandingView.swift; sourceTree = "<group>"; };
+		069813E7286F906700D00C2E /* RulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewModel.swift; sourceTree = "<group>"; };
+		069813EA286F909A00D00C2E /* RulesKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesKit.swift; sourceTree = "<group>"; };
+		069813EF286F935900D00C2E /* SubcategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesView.swift; sourceTree = "<group>"; };
+		069813F1286F937E00D00C2E /* RuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleView.swift; sourceTree = "<group>"; };
+		069813F3286F950900D00C2E /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		06A5F60F26FACA0D00E422A8 /* RulingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulingsList.swift; sourceTree = "<group>"; };
+		06BFD8C2271B842A00DCF862 /* SearchFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterView.swift; sourceTree = "<group>"; };
+		06BFD8C4271B845400DCF862 /* SearchFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterViewModel.swift; sourceTree = "<group>"; };
+		06E7FC7C270534F100802AC0 /* MTGWizardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTGWizardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F77C0526E7F6D5005C35C0 /* CardDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDescription.swift; sourceTree = "<group>"; };
 		06F77C0A26E82E20005C35C0 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		06F77C0F26E82EB9005C35C0 /* NarsetEnlightenedMaster.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NarsetEnlightenedMaster.json; sourceTree = "<group>"; };
 		06F77C1126E82EE1005C35C0 /* AkkiLavaRunner.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AkkiLavaRunner.json; sourceTree = "<group>"; };
 		06F77C1326E82EFB005C35C0 /* HalvarGodOfBattle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HalvarGodOfBattle.json; sourceTree = "<group>"; };
 		06F77C1C26E841B1005C35C0 /* SingleCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleCardViewModel.swift; sourceTree = "<group>"; };
-		06F77C1E26E84841005C35C0 /* ManaCost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManaCost.swift; sourceTree = "<group>"; };
+		06F77C1E26E84841005C35C0 /* ManaCostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManaCostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +104,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06E7FC79270534F100802AC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		060AE36126E7AD2400D8F881 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				06BFD8C1271B841900DCF862 /* SearchFilterView */,
 				060AE36226E7AD3100D8F881 /* SearchView.swift */,
-				060AE36426E7B10700D8F881 /* CardGrid.swift */,
 				063A799426EA9DB000C0195C /* SearchViewModel.swift */,
+				060AE36426E7B10700D8F881 /* CardGrid.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -90,6 +131,7 @@
 				06F77C1C26E841B1005C35C0 /* SingleCardViewModel.swift */,
 				060AE36926E7B50900D8F881 /* SingleCardView.swift */,
 				06F77C0526E7F6D5005C35C0 /* CardDescription.swift */,
+				06A5F60F26FACA0D00E422A8 /* RulingsList.swift */,
 			);
 			path = SingleCardView;
 			sourceTree = "<group>";
@@ -105,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				062A5D6F265F1802009FACCB /* MTGWizard */,
+				06E7FC7D270534F100802AC0 /* MTGWizardTests */,
 				062A5D6E265F1802009FACCB /* Products */,
 				062979D7268255E000ADFDC3 /* Frameworks */,
 			);
@@ -114,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				062A5D6D265F1802009FACCB /* MTGWizard.app */,
+				06E7FC7C270534F100802AC0 /* MTGWizardTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +165,7 @@
 		062A5D6F265F1802009FACCB /* MTGWizard */ = {
 			isa = PBXGroup;
 			children = (
+				069813E9286F909200D00C2E /* Models */,
 				06F77C0C26E82E61005C35C0 /* MockData */,
 				0659446726A6077600A8A03B /* Common */,
 				0659446326A603E400A8A03B /* Scenes */,
@@ -144,6 +189,7 @@
 		0659446326A603E400A8A03B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				069813E6286F905E00D00C2E /* Rules */,
 				060AE36826E7B4F800D8F881 /* SingleCardView */,
 				060AE36126E7AD2400D8F881 /* Search */,
 			);
@@ -154,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				0659446826A6077C00A8A03B /* Components */,
+				06666A782700ED4D008087EB /* Errors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -161,10 +208,55 @@
 		0659446826A6077C00A8A03B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				067FBE4126812ECA0073BC79 /* AsyncImageView.swift */,
-				06F77C1E26E84841005C35C0 /* ManaCost.swift */,
+				066A1E1B27205D4400211FA8 /* ColorSelectorView */,
+				06F77C1E26E84841005C35C0 /* ManaCostView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		066A1E1B27205D4400211FA8 /* ColorSelectorView */ = {
+			isa = PBXGroup;
+			children = (
+				066A1E1927205D2F00211FA8 /* ColorSelectorView.swift */,
+				066A1E1C27205D6400211FA8 /* ColorSelectorViewModel.swift */,
+			);
+			path = ColorSelectorView;
+			sourceTree = "<group>";
+		};
+		069813E6286F905E00D00C2E /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				069813E4286F905500D00C2E /* RulesLandingView.swift */,
+				069813E7286F906700D00C2E /* RulesViewModel.swift */,
+				069813EF286F935900D00C2E /* SubcategoriesView.swift */,
+				069813F1286F937E00D00C2E /* RuleView.swift */,
+				069813F3286F950900D00C2E /* RulesView.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		069813E9286F909200D00C2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				069813EA286F909A00D00C2E /* RulesKit.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		06BFD8C1271B841900DCF862 /* SearchFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				06BFD8C2271B842A00DCF862 /* SearchFilterView.swift */,
+				06BFD8C4271B845400DCF862 /* SearchFilterViewModel.swift */,
+			);
+			path = SearchFilterView;
+			sourceTree = "<group>";
+		};
+		06E7FC7D270534F100802AC0 /* MTGWizardTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MTGWizardTests;
 			sourceTree = "<group>";
 		};
 		06F77C0C26E82E61005C35C0 /* MockData */ = {
@@ -218,17 +310,39 @@
 			productReference = 062A5D6D265F1802009FACCB /* MTGWizard.app */;
 			productType = "com.apple.product-type.application";
 		};
+		06E7FC7B270534F100802AC0 /* MTGWizardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06E7FC84270534F100802AC0 /* Build configuration list for PBXNativeTarget "MTGWizardTests" */;
+			buildPhases = (
+				06E7FC78270534F100802AC0 /* Sources */,
+				06E7FC79270534F100802AC0 /* Frameworks */,
+				06E7FC7A270534F100802AC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06E7FC81270534F100802AC0 /* PBXTargetDependency */,
+			);
+			name = MTGWizardTests;
+			productName = MTGWizardTests;
+			productReference = 06E7FC7C270534F100802AC0 /* MTGWizardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		062A5D65265F1802009FACCB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					062A5D6C265F1802009FACCB = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					06E7FC7B270534F100802AC0 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 062A5D6C265F1802009FACCB;
 					};
 				};
 			};
@@ -249,6 +363,7 @@
 			projectRoot = "";
 			targets = (
 				062A5D6C265F1802009FACCB /* MTGWizard */,
+				06E7FC7B270534F100802AC0 /* MTGWizardTests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +378,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06E7FC7A270534F100802AC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -270,21 +392,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				067FBE4226812ECA0073BC79 /* AsyncImageView.swift in Sources */,
 				062A5D73265F1802009FACCB /* LandingView.swift in Sources */,
 				06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */,
-				06F77C1F26E84841005C35C0 /* ManaCost.swift in Sources */,
+				06F77C1F26E84841005C35C0 /* ManaCostView.swift in Sources */,
+				069813F2286F937E00D00C2E /* RuleView.swift in Sources */,
+				069813F0286F935900D00C2E /* SubcategoriesView.swift in Sources */,
+				066A1E1A27205D2F00211FA8 /* ColorSelectorView.swift in Sources */,
+				069813E8286F906700D00C2E /* RulesViewModel.swift in Sources */,
+				06666A792700ED4D008087EB /* Errors.swift in Sources */,
 				060AE36526E7B10700D8F881 /* CardGrid.swift in Sources */,
 				063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */,
+				069813EB286F909A00D00C2E /* RulesKit.swift in Sources */,
+				06A5F61026FACA0D00E422A8 /* RulingsList.swift in Sources */,
+				06BFD8C5271B845400DCF862 /* SearchFilterViewModel.swift in Sources */,
+				06BFD8C3271B842A00DCF862 /* SearchFilterView.swift in Sources */,
 				062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */,
 				060AE36326E7AD3100D8F881 /* SearchView.swift in Sources */,
+				069813F4286F950900D00C2E /* RulesView.swift in Sources */,
 				06F77C1D26E841B1005C35C0 /* SingleCardViewModel.swift in Sources */,
 				060AE36A26E7B50900D8F881 /* SingleCardView.swift in Sources */,
+				066A1E1D27205D6400211FA8 /* ColorSelectorViewModel.swift in Sources */,
+				069813E5286F905500D00C2E /* RulesLandingView.swift in Sources */,
 				06F77C0B26E82E20005C35C0 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06E7FC78270534F100802AC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06E7FC81270534F100802AC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 062A5D6C265F1802009FACCB /* MTGWizard */;
+			targetProxy = 06E7FC80270534F100802AC0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		062A5D7A265F1803009FACCB /* Debug */ = {
@@ -338,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -393,7 +541,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -413,11 +561,12 @@
 				DEVELOPMENT_TEAM = F8SAUD58HS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MTGWizard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.MTGWizard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -435,15 +584,64 @@
 				DEVELOPMENT_TEAM = F8SAUD58HS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MTGWizard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.MTGWizard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		06E7FC82270534F100802AC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F8SAUD58HS;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.MTGWizardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTGWizard.app/MTGWizard";
+			};
+			name = Debug;
+		};
+		06E7FC83270534F100802AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F8SAUD58HS;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.hearst.MTGWizardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTGWizard.app/MTGWizard";
 			};
 			name = Release;
 		};
@@ -468,6 +666,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		06E7FC84270534F100802AC0 /* Build configuration list for PBXNativeTarget "MTGWizardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06E7FC82270534F100802AC0 /* Debug */,
+				06E7FC83270534F100802AC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -475,8 +682,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JacobHearst/ScryfallKit.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

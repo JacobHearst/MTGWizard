@@ -8,27 +8,46 @@
 import Foundation
 import ScryfallKit
 
+@MainActor
 final class SearchViewModel: ObservableObject {
-    @Published var query: String = ""
+    @Published var name = "Dusk // Dawn"
     @Published var results = [Card]()
     @Published var isLoading = false
     @Published var error: Error?
+    @Published var isFiltersShown = false
+    @Published var filters = SearchFilters() {
+        didSet {
+            Task { await search() }
+        }
+    }
 
-    func search() {
+    init() {
+        Task { await search() }
+    }
+
+    func syncSearch() {
+        Task { await search() }
+    }
+
+    func search() async {
+        var searchFilters = filters.scryfallKitFilters
+        if !name.isEmpty {
+            searchFilters.append(.name(name))
+        }
+
+        guard searchFilters.count > 0 else { return }
+
+        // Clear previous results/errors and show loading indicator
         results = []
+        error = nil
         isLoading = true
 
-        ScryfallClient().searchCards(SearchCards(query: query)) { result in
-            DispatchQueue.main.async {
-                self.isLoading = false
-
-                switch result {
-                case .success(let cards):
-                    self.results = cards.data
-                case .failure(let error):
-                    self.error = error
-                }
-            }
+        do {
+            results = try await ScryfallClient().searchCards(filters: searchFilters).data
+        } catch {
+            self.error = error
         }
+
+        isLoading = false
     }
 }

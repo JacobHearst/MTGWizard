@@ -19,14 +19,17 @@ struct SearchView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Perform a Scryfall search", text: $viewModel.query, onCommit: { viewModel.search() })
+                    TextField("Search for cards", text: $viewModel.name, onCommit: { viewModel.syncSearch() })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                    Button(action: viewModel.search) {
-                        Text("Search")
-                    }
+
+                    Image(systemName: "line.horizontal.3.decrease.circle")
+                        .onTapGesture { viewModel.isFiltersShown.toggle() }
                 }
+
+                Divider()
+                    .padding(.top, 2)
 
                 if viewModel.isLoading {
                     ProgressView("Searching...")
@@ -40,7 +43,14 @@ struct SearchView: View {
 
                 CardGrid(cards: viewModel.results)
 
-            }.padding()
+            }
+            .padding()
+            .sheet(isPresented: $viewModel.isFiltersShown) {
+                SearchFilterView(
+                    isFiltersShown: $viewModel.isFiltersShown,
+                    filters: $viewModel.filters,
+                    viewModel: SearchFilterViewModel(from: viewModel.filters))
+            }
         }
     }
 }

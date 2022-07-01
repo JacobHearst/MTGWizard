@@ -8,7 +8,7 @@
 import SwiftUI
 import ScryfallKit
 
-struct ManaCost: View {
+struct ManaCostView: View {
     var manaCostSymbols: [String]
 
     init(manaCost: String?) {
@@ -24,8 +24,8 @@ struct ManaCost: View {
 
     var body: some View {
         HStack(spacing: 2) {
-            ForEach(manaCostSymbols, id: \.self) { symbol in
-                Image(symbol)
+            ForEach(manaCostSymbols.indices, id: \.self) { index in
+                Image(manaCostSymbols[index])
                     .resizable()
                     .scaledToFit()
             }
@@ -35,6 +35,6 @@ struct ManaCost: View {
 
 struct ManaCost_Previews: PreviewProvider {
     static var previews: some View {
-        ManaCost(manaCost: "{W}{U}{R}")
+        ManaCostView(manaCost: "{W}{U}{R}")
     }
 }

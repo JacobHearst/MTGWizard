@@ -8,12 +8,29 @@
 import SwiftUI
 import ScryfallKit
 
+@MainActor
 final class SingleCardViewModel: ObservableObject {
     @Published var viewingSecondFace = false
+    @Published var isRulesExpanded = false
+
+    @Published var rulings = [Ruling]()
+    @Published var isLoadingRulings = true
+    @Published var rulingsError: String?
+    @Published var cardImage: Image?
+
     var card: Card
 
     init(card: Card) {
         self.card = card
+        Task {
+            do {
+                rulings = try await ScryfallClient().getRulings(.scryfallID(id: card.id.uuidString)).data
+            } catch {
+                rulingsError = "Error loading rulings: \(error)"
+            }
+
+            isLoadingRulings = false
+        }
     }
 
     var viewSecondFaceString: String? {
@@ -87,12 +104,25 @@ final class SingleCardViewModel: ObservableObject {
         return card.oracleText
     }
 
-    var typeLine: String {
+    var typeLine: String? {
         if let faces = card.cardFaces {
             guard viewingSecondFace else { return faces[0].typeLine }
             return faces[0].typeLine
         }
 
         return card.typeLine
+    }
+
+    func buildAsyncImage(image: Image, geometry: GeometryProxy) -> some View {
+        let newImage = image
+            .resizable()
+            .scaledToFit()
+            .rotationEffect(cardRotationAngle)
+
+        guard !viewingSecondFace else {
+            return newImage.frame(maxHeight: geometry.size.width * 0.9)
+        }
+
+        return newImage.frame(maxWidth: geometry.size.width * 0.9)
     }
 }

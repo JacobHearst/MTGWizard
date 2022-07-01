@@ -26,7 +26,13 @@ struct CardGrid: View {
                 ForEach(cards) { card in
                     NavigationLink(destination: SingleCardView(card: card)) {
                         if let url = card.getImageURL(type: .normal) {
-                            AsyncImage(url: url)
+                            AsyncImage(url: url, content: { image in
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                            }) {
+                                ProgressView()
+                            }
                         } else {
                             Text("No image for \(card.name)")
                         }

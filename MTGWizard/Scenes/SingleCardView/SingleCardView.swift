@@ -17,8 +17,8 @@ struct SingleCardView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .center) {
+        GeometryReader { geo in
+            ScrollView {
                 HStack {
                     Button(action: { presentationMode.wrappedValue.dismiss() }) {
                         Image(systemName: "chevron.left")
@@ -29,9 +29,9 @@ struct SingleCardView: View {
                 .padding([.leading, .top])
 
                 if let url = viewModel.cardImageURL {
-                    AsyncImage(url: url)
-//                        .frame(maxHeight: geometry.size.width)
-                        .rotationEffect(viewModel.cardRotationAngle)
+                    AsyncImage(url: url, content: { image in
+                        viewModel.buildAsyncImage(image: image, geometry: geo)
+                    }) { ProgressView() }
                 } else {
                     Text("No image for \(viewModel.cardName)")
                 }
@@ -49,11 +49,5 @@ struct SingleCardView: View {
                 Spacer()
             }
         }.navigationBarHidden(true)
-    }
-}
-
-struct SingleCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        SingleCardView(card: MockData.shared.cards[0])
     }
 }
