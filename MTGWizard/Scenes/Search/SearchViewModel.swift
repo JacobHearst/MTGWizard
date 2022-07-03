@@ -14,7 +14,7 @@ final class SearchViewModel: ObservableObject {
     @Published var results = [Card]()
     @Published var isLoading = false
     @Published var error: Error?
-    @Published var isFiltersShown = false
+    @Published var showFilters = true
     @Published var filters = SearchFilters() {
         didSet {
             Task { await search() }
@@ -22,10 +22,6 @@ final class SearchViewModel: ObservableObject {
     }
 
     init() {
-        Task { await search() }
-    }
-
-    func syncSearch() {
         Task { await search() }
     }
 

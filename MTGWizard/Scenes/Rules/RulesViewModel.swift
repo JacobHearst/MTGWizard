@@ -12,6 +12,7 @@ final class RulesViewModel: ObservableObject {
     @Published var rules = [Category]()
     @Published var error: String?
     @Published var glossary = [GlossaryTerm]()
+    @Published var selectedTab = 0
 
     init() {
         Task {

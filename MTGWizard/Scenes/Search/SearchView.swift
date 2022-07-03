@@ -9,23 +9,19 @@ import SwiftUI
 import ScryfallKit
 
 struct SearchView: View {
-    @StateObject private var viewModel: SearchViewModel
-
-    init() {
-        _viewModel = StateObject(wrappedValue: SearchViewModel())
-    }
+    @ObservedObject private var viewModel = SearchViewModel()
 
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Search for cards", text: $viewModel.name, onCommit: { viewModel.syncSearch() })
+                    TextField("Search for cards", text: $viewModel.name, onCommit: { Task { await viewModel.search() } })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
 
                     Image(systemName: "line.horizontal.3.decrease.circle")
-                        .onTapGesture { viewModel.isFiltersShown.toggle() }
+                        .onTapGesture { viewModel.showFilters.toggle() }
                 }
 
                 Divider()
@@ -45,11 +41,8 @@ struct SearchView: View {
 
             }
             .padding()
-            .sheet(isPresented: $viewModel.isFiltersShown) {
-                SearchFilterView(
-                    isFiltersShown: $viewModel.isFiltersShown,
-                    filters: $viewModel.filters,
-                    viewModel: SearchFilterViewModel(from: viewModel.filters))
+            .sheet(isPresented: $viewModel.showFilters) {
+                SearchFilterView(showFilters: $viewModel.showFilters, filters: $viewModel.filters)
             }
         }
     }
