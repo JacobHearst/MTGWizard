@@ -10,11 +10,11 @@ import ScryfallKit
 
 @MainActor
 final class SearchViewModel: ObservableObject {
-    @Published var name = "Dusk // Dawn"
+    @Published var name = ""
     @Published var results = [Card]()
     @Published var isLoading = false
     @Published var error: Error?
-    @Published var showFilters = true
+    @Published var showFilters = false
     @Published var filters = SearchFilters() {
         didSet {
             Task { await search() }

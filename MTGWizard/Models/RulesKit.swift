@@ -6,6 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct RulesObject: Decodable {
+    let rules: [Category]
+    let glossary: [GlossaryTerm]
+}
 
 struct Category: Codable, Identifiable {
     let id: String
