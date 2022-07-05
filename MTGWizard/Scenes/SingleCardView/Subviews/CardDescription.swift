@@ -45,6 +45,10 @@ struct CardDescription: View {
                             RulingsList(rulings: viewModel.rulings)
                         }
                     }
+
+                    DisclosureGroup("Legality", isExpanded: $viewModel.isLegalityExpanded) {
+                        LegalityView(card: viewModel.card)
+                    }
                 }
             }
         }

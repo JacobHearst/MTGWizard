@@ -12,6 +12,7 @@ import ScryfallKit
 final class SingleCardViewModel: ObservableObject {
     @Published var viewingSecondFace = false
     @Published var isRulesExpanded = false
+    @Published var isLegalityExpanded = false
 
     @Published var rulings = [Ruling]()
     @Published var isLoadingRulings = true
@@ -119,10 +120,10 @@ final class SingleCardViewModel: ObservableObject {
             .scaledToFit()
             .rotationEffect(cardRotationAngle)
 
-        guard !viewingSecondFace else {
+        if viewingSecondFace && ![.transform, .flip, .modalDfc].contains(card.layout) {
             return newImage.frame(maxHeight: geometry.size.width * 0.9)
+        } else {
+            return newImage.frame(maxWidth: geometry.size.width * 0.9)
         }
-
-        return newImage.frame(maxWidth: geometry.size.width * 0.9)
     }
 }
