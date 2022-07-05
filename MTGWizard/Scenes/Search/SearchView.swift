@@ -15,7 +15,7 @@ struct SearchView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Search for cards", text: $viewModel.name, onCommit: { Task { await viewModel.search() } })
+                    TextField("Enter card name", text: $viewModel.name, onCommit: { Task { await viewModel.search() } })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
@@ -29,12 +29,13 @@ struct SearchView: View {
 
                 if viewModel.isLoading {
                     ProgressView("Searching...")
-                }
-
-                if let err = viewModel.error {
+                } else if let err = viewModel.error {
                     Text(String(describing: err))
                         .padding(.top)
                         .multilineTextAlignment(.center)
+                } else if viewModel.results.isEmpty {
+                    Text("Perform a search to view cards")
+                        .padding(.top)
                 }
 
                 CardGrid(cards: viewModel.results)

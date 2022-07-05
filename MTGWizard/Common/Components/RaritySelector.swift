@@ -9,10 +9,10 @@ import SwiftUI
 import ScryfallKit
 
 struct RaritySelector: View {
-    @State private var common = false { didSet { toggle(rarity: .common) }}
-    @State private var uncommon = false { didSet { toggle(rarity: .uncommon) }}
-    @State private var rare = false { didSet { toggle(rarity: .rare) }}
-    @State private var mythic = false { didSet { toggle(rarity: .mythic) }}
+    @State private var common = false
+    @State private var uncommon = false
+    @State private var rare = false
+    @State private var mythic = false
 
     @Binding var selection: [Card.Rarity]
 
@@ -21,18 +21,18 @@ struct RaritySelector: View {
             VStack {
                 Toggle(isOn: $common) {
                     Text("Common")
-                }
+                }.onTapGesture { toggle(rarity: .common) }
                 Toggle(isOn: $uncommon) {
                     Text("Uncommon")
-                }
+                }.onTapGesture { toggle(rarity: .uncommon) }
             }
             VStack {
                 Toggle(isOn: $rare) {
                     Text("Rare")
-                }
+                }.onTapGesture { toggle(rarity: .rare) }
                 Toggle(isOn: $mythic) {
                     Text("Mythic")
-                }
+                }.onTapGesture { toggle(rarity: .mythic) }
             }
         }
     }

@@ -14,12 +14,13 @@ final class SearchViewModel: ObservableObject {
     @Published var results = [Card]()
     @Published var isLoading = false
     @Published var error: Error?
-    @Published var showFilters = false
-    @Published var filters = SearchFilters() {
+    @Published var showFilters = false {
         didSet {
+            guard !showFilters else { return }
             Task { await search() }
         }
     }
+    @Published var filters = SearchFilters()
 
     init() {
         Task { await search() }

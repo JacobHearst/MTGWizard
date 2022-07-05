@@ -14,23 +14,21 @@ struct SearchFilterView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section("Basic") {
+                Section("Card Text") {
                     VStack(alignment: .leading) {
-                        Group {
                             Text("Text")
                                 .font(.headline)
                                 .listRowInsets(EdgeInsets())
                             TextField("Any words in the rules box", text: $filters.oracleText)
-                        }
 
-                        Group {
                             Text("Types")
                                 .font(.headline)
                             TextField("ex: Legendary Artifact Horror", text: $filters.typeLine)
-                        }
+                    }.padding([.top, .bottom])
+                }
 
-
-                        Group {
+                Section("Colors") {
+                    VStack(alignment: .leading) {
                             Text("Colors")
                                 .font(.headline)
                             ColorSelector(selectedColors: $filters.colors)
@@ -42,23 +40,23 @@ struct SearchFilterView: View {
                                     }
                                 }.pickerStyle(MenuPickerStyle())
                             }
-                        }
 
-                        Group {
                             Text("Commander Identity")
                                 .font(.headline)
                             ColorSelector(selectedColors: $filters.colorIdentity)
 
                             Text("Mana Cost")
                                 .font(.headline)
-                            TextField("Mana symbols (eg: {W}{U}{B}{R}{G}{C})", text: $filters.manaCost)
-                        }
+                            TextField("{W}{U}{B}{R}{G}{C}", text: $filters.manaCost)
                     }.padding([.top, .bottom])
                 }
 
-                Group {
-                    Text("Rarity")
-                    RaritySelector(selection: $filters.rarities)
+                Section("Metadata") {
+                    VStack(alignment: .leading) {
+                        Text("Rarity")
+                            .font(.headline)
+                        RaritySelector(selection: $filters.rarities)
+                    }.padding([.top, .bottom])
                 }
             }
             .textFieldStyle(.roundedBorder)

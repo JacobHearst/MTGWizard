@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LandingView: View {
-    @State private var tab = 1
+    @State private var tab = 0
 
     var body: some View {
         TabView(selection: $tab) {
