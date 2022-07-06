@@ -25,13 +25,15 @@ struct CardGrid: View {
             LazyVGrid(columns: columns) {
                 ForEach(cards) { card in
                     NavigationLink(destination: SingleCardView(card: card)) {
-                        if let url = card.getImageURL(type: .normal) {
+                        if let url = card.getImageURL(types: [.png, .normal]) {
                             AsyncImage(url: url, content: { image in
-                                image
-                                    .resizable()
-                                    .scaledToFit()
+                                image.resizable()
+                                     .scaledToFit()
                             }) {
-                                ProgressView()
+                                VStack {
+                                    Text(card.name)
+                                    ProgressView()
+                                }
                             }
                         } else {
                             Text("No image for \(card.name)")
@@ -39,7 +41,7 @@ struct CardGrid: View {
                     }
                 }
             }
-        }.navigationBarHidden(true)
+        }
     }
 }
 

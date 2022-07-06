@@ -22,7 +22,7 @@ struct SingleCardView: View {
                 HStack {
                     Button(action: { presentationMode.wrappedValue.dismiss() }) {
                         Image(systemName: "chevron.left")
-                        Text("Search")
+                        Text("Back")
                     }
                     Spacer()
                 }
@@ -36,9 +36,18 @@ struct SingleCardView: View {
                     Text("No image for \(viewModel.cardName)")
                 }
 
-                if let viewSecondFaceString = viewModel.viewSecondFaceString {
-                    Button(action: { viewModel.viewingSecondFace.toggle() }) {
-                        Text(viewSecondFaceString)
+                HStack {
+                    Button(action: { viewModel.toggleSaved(presentationMode: self.presentationMode) }) {
+                        if viewModel.isSaved {
+                            Label("Unsave card", systemImage: "minus.square.fill")
+                        } else {
+                            Label("Save Card", systemImage: "plus.square.fill")
+                        }
+                    }
+                    if let viewSecondFaceString = viewModel.viewSecondFaceString {
+                        Button(action: { viewModel.viewingSecondFace.toggle() }) {
+                            Text(viewSecondFaceString)
+                        }
                     }
                 }
 

@@ -18,11 +18,13 @@ final class SingleCardViewModel: ObservableObject {
     @Published var isLoadingRulings = true
     @Published var rulingsError: String?
     @Published var cardImage: Image?
+    @Published var isSaved = false
 
     var card: Card
 
     init(card: Card) {
         self.card = card
+        isSaved = UserDefaultsService().getSavedCards().contains(card.name)
         Task {
             do {
                 rulings = try await ScryfallClient().getRulings(.scryfallID(id: card.id.uuidString)).data
@@ -66,7 +68,7 @@ final class SingleCardViewModel: ObservableObject {
     }
 
     var cardImageURL: URL? {
-        card.getImageURL(type: .normal, getSecondFace: viewingSecondFace)
+        card.getImageURL(types: [.png, .normal], getSecondFace: viewingSecondFace)
     }
 
     var cardFlavorText: String? {
@@ -124,6 +126,25 @@ final class SingleCardViewModel: ObservableObject {
             return newImage.frame(maxHeight: geometry.size.width * 0.9)
         } else {
             return newImage.frame(maxWidth: geometry.size.width * 0.9)
+        }
+    }
+
+    func saveCard() {
+        UserDefaultsService.shared.addSavedCard(cardName: card.name)
+        isSaved = true
+    }
+
+    func unsaveCard() {
+        UserDefaultsService.shared.removeSavedCard(cardName: card.name)
+        isSaved = false
+    }
+
+    func toggleSaved(presentationMode: Binding<PresentationMode>) {
+        if isSaved {
+            unsaveCard()
+            presentationMode.wrappedValue.dismiss()
+        } else {
+            saveCard()
         }
     }
 }

@@ -41,6 +41,7 @@ struct SearchView: View {
                 CardGrid(cards: viewModel.results)
 
             }
+            .navigationBarHidden(true)
             .padding()
             .sheet(isPresented: $viewModel.showFilters) {
                 SearchFilterView(showFilters: $viewModel.showFilters, filters: $viewModel.filters)

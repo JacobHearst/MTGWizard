@@ -21,6 +21,9 @@
 		0681F2C62874C7650010E1B6 /* LegalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2C52874C7650010E1B6 /* LegalityView.swift */; };
 		0681F2CA2874CD110010E1B6 /* Legality+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2C92874CD110010E1B6 /* Legality+Color.swift */; };
 		0681F2CE2874CF550010E1B6 /* Legality+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2CD2874CF550010E1B6 /* Legality+Label.swift */; };
+		0681F2D02875230D0010E1B6 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2CF2875230D0010E1B6 /* UserDefaultsService.swift */; };
+		0681F2D3287524830010E1B6 /* SavedCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2D2287524830010E1B6 /* SavedCardsView.swift */; };
+		0681F2D5287524DB0010E1B6 /* SavedCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2D4287524DB0010E1B6 /* SavedCardsViewModel.swift */; };
 		069813E5286F905500D00C2E /* RulebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E4286F905500D00C2E /* RulebookView.swift */; };
 		069813E8286F906700D00C2E /* RulebookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E7286F906700D00C2E /* RulebookViewModel.swift */; };
 		069813EB286F909A00D00C2E /* RulesKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813EA286F909A00D00C2E /* RulesKit.swift */; };
@@ -32,7 +35,6 @@
 		069813FD2871380000D00C2E /* ManaSymbolToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813FC2871380000D00C2E /* ManaSymbolToggle.swift */; };
 		0698140128714D2C00D00C2E /* RaritySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698140028714D2C00D00C2E /* RaritySelector.swift */; };
 		069E3FE228748F1B0084C973 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E3FE128748F1B0084C973 /* CategoriesView.swift */; };
-		069E3FE4287498940084C973 /* StringProtocol+SubstringIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E3FE3287498940084C973 /* StringProtocol+SubstringIndex.swift */; };
 		069E3FE628749E160084C973 /* GlossaryTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E3FE528749E160084C973 /* GlossaryTermView.swift */; };
 		069E3FE928749E7F0084C973 /* GlossaryTermListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E3FE828749E7F0084C973 /* GlossaryTermListView.swift */; };
 		069E3FEB2874A1290084C973 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E3FEA2874A1290084C973 /* ClearButton.swift */; };
@@ -88,6 +90,9 @@
 		0681F2C52874C7650010E1B6 /* LegalityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityView.swift; sourceTree = "<group>"; };
 		0681F2C92874CD110010E1B6 /* Legality+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Legality+Color.swift"; sourceTree = "<group>"; };
 		0681F2CD2874CF550010E1B6 /* Legality+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Legality+Label.swift"; sourceTree = "<group>"; };
+		0681F2CF2875230D0010E1B6 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		0681F2D2287524830010E1B6 /* SavedCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardsView.swift; sourceTree = "<group>"; };
+		0681F2D4287524DB0010E1B6 /* SavedCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardsViewModel.swift; sourceTree = "<group>"; };
 		069813E4286F905500D00C2E /* RulebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookView.swift; sourceTree = "<group>"; };
 		069813E7286F906700D00C2E /* RulebookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookViewModel.swift; sourceTree = "<group>"; };
 		069813EA286F909A00D00C2E /* RulesKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesKit.swift; sourceTree = "<group>"; };
@@ -99,7 +104,6 @@
 		069813FC2871380000D00C2E /* ManaSymbolToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManaSymbolToggle.swift; sourceTree = "<group>"; };
 		0698140028714D2C00D00C2E /* RaritySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaritySelector.swift; sourceTree = "<group>"; };
 		069E3FE128748F1B0084C973 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
-		069E3FE3287498940084C973 /* StringProtocol+SubstringIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+SubstringIndex.swift"; sourceTree = "<group>"; };
 		069E3FE528749E160084C973 /* GlossaryTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTermView.swift; sourceTree = "<group>"; };
 		069E3FE828749E7F0084C973 /* GlossaryTermListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTermListView.swift; sourceTree = "<group>"; };
 		069E3FEA2874A1290084C973 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		0659446326A603E400A8A03B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0681F2D12875246C0010E1B6 /* SavedCardsView */,
 				069813E6286F905E00D00C2E /* Rules */,
 				060AE36826E7B4F800D8F881 /* SingleCardView */,
 				060AE36126E7AD2400D8F881 /* Search */,
@@ -220,6 +225,7 @@
 				069813F7286F9DF300D00C2E /* Extensions */,
 				0659446826A6077C00A8A03B /* Components */,
 				06666A782700ED4D008087EB /* Errors.swift */,
+				0681F2CF2875230D0010E1B6 /* UserDefaultsService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -247,6 +253,15 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		0681F2D12875246C0010E1B6 /* SavedCardsView */ = {
+			isa = PBXGroup;
+			children = (
+				0681F2D2287524830010E1B6 /* SavedCardsView.swift */,
+				0681F2D4287524DB0010E1B6 /* SavedCardsViewModel.swift */,
+			);
+			path = SavedCardsView;
+			sourceTree = "<group>";
+		};
 		069813E6286F905E00D00C2E /* Rules */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				069813F8286F9DFC00D00C2E /* Card.Rarity+label.swift */,
-				069E3FE3287498940084C973 /* StringProtocol+SubstringIndex.swift */,
 				0681F2C92874CD110010E1B6 /* Legality+Color.swift */,
 				0681F2CD2874CF550010E1B6 /* Legality+Label.swift */,
 			);
@@ -441,7 +455,6 @@
 				062A5D73265F1802009FACCB /* LandingView.swift in Sources */,
 				06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */,
 				06F77C1F26E84841005C35C0 /* ManaCostView.swift in Sources */,
-				069E3FE4287498940084C973 /* StringProtocol+SubstringIndex.swift in Sources */,
 				069E3FE928749E7F0084C973 /* GlossaryTermListView.swift in Sources */,
 				0681F2C62874C7650010E1B6 /* LegalityView.swift in Sources */,
 				069E3FE228748F1B0084C973 /* CategoriesView.swift in Sources */,
@@ -449,6 +462,7 @@
 				069813F0286F935900D00C2E /* SubcategoriesView.swift in Sources */,
 				066A1E1A27205D2F00211FA8 /* ColorSelector.swift in Sources */,
 				069813E8286F906700D00C2E /* RulebookViewModel.swift in Sources */,
+				0681F2D5287524DB0010E1B6 /* SavedCardsViewModel.swift in Sources */,
 				06666A792700ED4D008087EB /* Errors.swift in Sources */,
 				060AE36526E7B10700D8F881 /* CardGrid.swift in Sources */,
 				063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */,
@@ -461,12 +475,14 @@
 				06BFD8C3271B842A00DCF862 /* SearchFilterView.swift in Sources */,
 				0681F2CE2874CF550010E1B6 /* Legality+Label.swift in Sources */,
 				062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */,
+				0681F2D3287524830010E1B6 /* SavedCardsView.swift in Sources */,
 				0698140128714D2C00D00C2E /* RaritySelector.swift in Sources */,
 				069813FD2871380000D00C2E /* ManaSymbolToggle.swift in Sources */,
 				060AE36326E7AD3100D8F881 /* SearchView.swift in Sources */,
 				069813F4286F950900D00C2E /* RulesView.swift in Sources */,
 				06F77C1D26E841B1005C35C0 /* SingleCardViewModel.swift in Sources */,
 				060AE36A26E7B50900D8F881 /* SingleCardView.swift in Sources */,
+				0681F2D02875230D0010E1B6 /* UserDefaultsService.swift in Sources */,
 				069E3FE628749E160084C973 /* GlossaryTermView.swift in Sources */,
 				069813E5286F905500D00C2E /* RulebookView.swift in Sources */,
 				06F77C0B26E82E20005C35C0 /* MockData.swift in Sources */,

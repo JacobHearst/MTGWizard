@@ -24,10 +24,10 @@ struct LandingView: View {
                     Text("Rulebook")
                 }
                 .tag(1)
-            Text("Decks")
+            SavedCardsView()
                 .tabItem {
-                    Image(systemName: "cube.fill")
-                    Text("Decks")
+                    Image(systemName: "tray.2.fill")
+                    Text("Saved Cards")
                 }
                 .tag(2)
         }
