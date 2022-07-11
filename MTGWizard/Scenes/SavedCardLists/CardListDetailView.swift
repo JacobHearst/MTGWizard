@@ -13,6 +13,7 @@ struct CardListDetailView: View {
     var body: some View {
         CardGrid(cards: list.cards, activeList: list)
             .padding()
+            .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(list.name)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
