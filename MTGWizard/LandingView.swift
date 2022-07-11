@@ -8,28 +8,32 @@
 import SwiftUI
 
 struct LandingView: View {
-    @State private var tab = 1
+    enum TabSelection {
+        case search, saved, rules
+    }
+    
+    @State private var tab: TabSelection = .saved
 
     var body: some View {
         TabView(selection: $tab) {
-            SearchView()
+            SearchViewTab()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-                .tag(0)
+                .tag(TabSelection.search)
             SavedCardListsView()
                 .tabItem {
                     Image(systemName: "tray.2.fill")
                     Text("Saved Cards")
                 }
-                .tag(1)
+                .tag(TabSelection.saved)
             RulebookView()
                 .tabItem {
                     Image(systemName: "text.book.closed")
                     Text("Rulebook")
                 }
-                .tag(2)
+                .tag(TabSelection.rules)
         }
     }
 }
