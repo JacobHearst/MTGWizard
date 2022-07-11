@@ -48,6 +48,7 @@
 		2A22533E287BA427005FE78E /* Card+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A22533D287BA427005FE78E /* Card+Equatable.swift */; };
 		2A94C9B1287BBB3C00E25849 /* CardDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B0287BBB3C00E25849 /* CardDescriptionViewModel.swift */; };
 		2A94C9B5287BC73A00E25849 /* SearchViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B4287BC73A00E25849 /* SearchViewBody.swift */; };
+		2A94C9B7287C551200E25849 /* View+TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B6287C551200E25849 /* View+TextFieldAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		2A22533D287BA427005FE78E /* Card+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Equatable.swift"; sourceTree = "<group>"; };
 		2A94C9B0287BBB3C00E25849 /* CardDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDescriptionViewModel.swift; sourceTree = "<group>"; };
 		2A94C9B4287BC73A00E25849 /* SearchViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewBody.swift; sourceTree = "<group>"; };
+		2A94C9B6287C551200E25849 /* View+TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TextFieldAlert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 				0681F2C92874CD110010E1B6 /* Legality+Color.swift */,
 				2A225337287B6E07005FE78E /* Array+RawRepresentable.swift */,
 				2A22533D287BA427005FE78E /* Card+Equatable.swift */,
+				2A94C9B6287C551200E25849 /* View+TextFieldAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				069813F2286F937E00D00C2E /* RuleView.swift in Sources */,
 				069813F0286F935900D00C2E /* SubcategoriesView.swift in Sources */,
 				066A1E1A27205D2F00211FA8 /* ColorSelector.swift in Sources */,
+				2A94C9B7287C551200E25849 /* View+TextFieldAlert.swift in Sources */,
 				2A225338287B6E07005FE78E /* Array+RawRepresentable.swift in Sources */,
 				069813E8286F906700D00C2E /* RulebookViewModel.swift in Sources */,
 				06666A792700ED4D008087EB /* Errors.swift in Sources */,
