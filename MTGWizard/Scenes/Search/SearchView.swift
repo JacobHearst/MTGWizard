@@ -18,7 +18,7 @@ struct SearchView: View {
                     TextField("Enter card name", text: $viewModel.name, onCommit: handleSearch)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
-                        .autocapitalization(.none)
+                        .modifier(ClearButton(text: $viewModel.name))
 
                     Image(systemName: "line.horizontal.3.decrease.circle")
                         .onTapGesture { viewModel.showFilters.toggle() }

@@ -16,7 +16,7 @@ struct ClearButton: ViewModifier {
             if !text.isEmpty {
                 Button(action: clearText) {
                     Image(systemName: "xmark.circle")
-                        .foregroundColor(Color(UIColor.opaqueSeparator))
+                        .foregroundColor(.blue)
                 }.padding(.trailing, 8)
             }
         }

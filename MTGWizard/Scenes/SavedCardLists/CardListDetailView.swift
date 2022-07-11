@@ -12,6 +12,7 @@ struct CardListDetailView: View {
 
     var body: some View {
         CardGrid(cards: list.cards)
+            .padding()
             .navigationTitle(list.name)
     }
 }
