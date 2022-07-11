@@ -20,14 +20,7 @@ struct SavedCardListsView: View {
         NavigationView {
             List {
                 NavigationLink("Saved", destination: CardListDetailView(list: savedCardsList))
-                ForEach(cardLists) { list in
-                    NavigationLink(list.name, destination: CardListDetailView(list: list))
-                        .swipeActions {
-                            Button(role: .destructive, action: { deleteList(list) }) {
-                                Label("Delete", systemImage: "trash")
-                            }
-                        }
-                }
+                ForEach(cardLists, content: listLink)
             }
             .navigationTitle("Your Lists")
             .toolbar {
@@ -38,6 +31,15 @@ struct SavedCardListsView: View {
                 }
             }
         }
+    }
+    
+    func listLink(_ list: CardList) -> some View {
+        NavigationLink(list.name, destination: CardListDetailView(list: list))
+            .swipeActions {
+                Button(role: .destructive, action: { deleteList(list) }) {
+                    Label("Delete", systemImage: "trash")
+                }
+            }
     }
     
     func showCreateList() {

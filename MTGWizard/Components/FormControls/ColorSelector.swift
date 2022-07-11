@@ -8,7 +8,6 @@
 import SwiftUI
 import ScryfallKit
 
-
 struct ColorSelector: View, ManaSymbolToggleDelegate {
     @Binding var selectedColors: [ScryfallKit.Color]
 
