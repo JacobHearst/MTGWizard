@@ -17,16 +17,18 @@ final class SearchViewModel: ObservableObject {
     @Published var showFilters = false {
         didSet {
             guard !showFilters else { return }
-            Task { await search() }
+            search()
         }
     }
     @Published var filters = SearchFilters()
+    @Published var sortMode: SortMode = .name { didSet { search() }}
+    @Published var sortDirection: SortDirection = .auto { didSet { search() }}
 
     init() {
-        Task { await search() }
+        search()
     }
 
-    func search() async {
+    func search() {
         var searchFilters = filters.scryfallKitFilters
         if !name.isEmpty {
             searchFilters.append(.name(name))
@@ -39,12 +41,14 @@ final class SearchViewModel: ObservableObject {
         error = nil
         isLoading = true
 
-        do {
-            results = try await ScryfallClient().searchCards(filters: searchFilters).data
-        } catch {
-            self.error = error
+        Task {
+            do {
+                results = try await ScryfallClient().searchCards(filters: searchFilters, order: sortMode, sortDirection: sortDirection).data
+            } catch {
+                self.error = error
+            }
+            
+            isLoading = false
         }
-
-        isLoading = false
     }
 }

@@ -23,22 +23,28 @@ struct SearchView: View {
                     Image(systemName: "line.horizontal.3.decrease.circle")
                         .onTapGesture { viewModel.showFilters.toggle() }
                 }
+                
+                HStack {
+                    Text("Sort by:")
+                    Picker("Sort by:", selection: $viewModel.sortMode) {
+                        ForEach(SortMode.allCases, id: \.rawValue) { mode in
+                            Text(mode.rawValue.capitalized).tag(mode)
+                        }
+                    }.pickerStyle(MenuPickerStyle())
+                    
+                    Spacer()
+                    
+                    Picker("Sort Direction", selection: $viewModel.sortDirection) {
+                        ForEach(SortDirection.allCases, id: \.rawValue) { dir in
+                            Text(dir.rawValue.capitalized).tag(dir)
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                }
 
                 Divider()
                     .padding(.top, 2)
 
-                if viewModel.isLoading {
-                    ProgressView("Searching...")
-                } else if let err = viewModel.error {
-                    Text(String(describing: err))
-                        .padding(.top)
-                        .multilineTextAlignment(.center)
-                } else if viewModel.results.isEmpty {
-                    Text("Perform a search to view cards")
-                        .padding(.top)
-                }
-
-                CardGrid(cards: viewModel.results)
+                SearchViewBody(isLoading: viewModel.isLoading, error: viewModel.error, results: viewModel.results)
 
             }
             .navigationBarHidden(true)
@@ -50,7 +56,7 @@ struct SearchView: View {
     }
     
     func handleSearch() {
-        Task { await viewModel.search() }
+        viewModel.search()
     }
 }
 

@@ -47,6 +47,7 @@
 		2A22533A287B7483005FE78E /* CardListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A225339287B7483005FE78E /* CardListDetailView.swift */; };
 		2A22533E287BA427005FE78E /* Card+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A22533D287BA427005FE78E /* Card+Equatable.swift */; };
 		2A94C9B1287BBB3C00E25849 /* CardDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B0287BBB3C00E25849 /* CardDescriptionViewModel.swift */; };
+		2A94C9B5287BC73A00E25849 /* SearchViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B4287BC73A00E25849 /* SearchViewBody.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		2A225339287B7483005FE78E /* CardListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListDetailView.swift; sourceTree = "<group>"; };
 		2A22533D287BA427005FE78E /* Card+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Equatable.swift"; sourceTree = "<group>"; };
 		2A94C9B0287BBB3C00E25849 /* CardDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDescriptionViewModel.swift; sourceTree = "<group>"; };
+		2A94C9B4287BC73A00E25849 /* SearchViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewBody.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				06BFD8C2271B842A00DCF862 /* SearchFilterView.swift */,
+				2A94C9B4287BC73A00E25849 /* SearchViewBody.swift */,
 				060AE36226E7AD3100D8F881 /* SearchView.swift */,
 				063A799426EA9DB000C0195C /* SearchViewModel.swift */,
 			);
@@ -442,6 +445,7 @@
 				06F77C1F26E84841005C35C0 /* ManaCostView.swift in Sources */,
 				069E3FE928749E7F0084C973 /* GlossaryTermListView.swift in Sources */,
 				0681F2C62874C7650010E1B6 /* LegalityView.swift in Sources */,
+				2A94C9B5287BC73A00E25849 /* SearchViewBody.swift in Sources */,
 				069E3FE228748F1B0084C973 /* CategoriesView.swift in Sources */,
 				069813F2286F937E00D00C2E /* RuleView.swift in Sources */,
 				069813F0286F935900D00C2E /* SubcategoriesView.swift in Sources */,
