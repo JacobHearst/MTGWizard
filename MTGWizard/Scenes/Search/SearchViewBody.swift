@@ -12,6 +12,7 @@ struct SearchViewBody: View {
     var isLoading: Bool
     var error: Error?
     var results: [Card]
+    var activeList: CardList? = nil
     
     var body: some View {
         if isLoading {
@@ -25,7 +26,7 @@ struct SearchViewBody: View {
                 .padding(.top)
         }
         
-        CardGrid(cards: results)
+        CardGrid(cards: results, activeList: activeList)
     }
 }
 

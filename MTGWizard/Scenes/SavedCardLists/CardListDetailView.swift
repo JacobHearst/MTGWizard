@@ -11,9 +11,16 @@ struct CardListDetailView: View {
     var list: CardList
 
     var body: some View {
-        CardGrid(cards: list.cards)
+        CardGrid(cards: list.cards, activeList: list)
             .padding()
             .navigationTitle(list.name)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    NavigationLink(destination: SearchView(activeList: list)) {
+                        Image(systemName: "plus.circle")
+                    }
+                }
+            }
     }
 }
 

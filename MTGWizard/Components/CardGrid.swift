@@ -31,7 +31,7 @@ struct CardGrid: View {
     }
     
     func imageLink(card: Card) -> some View {
-        NavigationLink(destination: SingleCardView(card: card)) {
+        NavigationLink(destination: SingleCardView(card: card, activeList: activeList)) {
             if let url = card.getImageURL(types: [.png, .normal]) {
                 AsyncImage(url: url, content: { image in
                     image.resizable()

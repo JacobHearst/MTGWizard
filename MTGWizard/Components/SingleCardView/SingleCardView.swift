@@ -127,13 +127,7 @@ struct SingleCardView: View {
 // MARK: Button handlers
 extension SingleCardView {
     func toggleSaved(presentationMode: Binding<PresentationMode>) {
-        if isSaved {
-            unsaveCard()
-            presentationMode.wrappedValue.dismiss()
-        } else {
-            saveCard()
-        }
-        
+        isSaved ? unsaveCard() : saveCard()
         isSaved.toggle()
     }
     

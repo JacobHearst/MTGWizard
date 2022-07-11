@@ -10,6 +10,7 @@ import ScryfallKit
 
 struct SearchView: View {
     @ObservedObject private var viewModel = SearchViewModel()
+    var activeList: CardList? = nil
 
     var body: some View {
         NavigationView {
@@ -44,7 +45,10 @@ struct SearchView: View {
                 Divider()
                     .padding(.top, 2)
 
-                SearchViewBody(isLoading: viewModel.isLoading, error: viewModel.error, results: viewModel.results)
+                SearchViewBody(isLoading: viewModel.isLoading,
+                               error: viewModel.error,
+                               results: viewModel.results,
+                               activeList: activeList)
 
             }
             .navigationBarHidden(true)
