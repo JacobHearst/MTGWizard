@@ -15,7 +15,7 @@ struct SearchView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Enter card name", text: $viewModel.name, onCommit: { Task { await viewModel.search() } })
+                    TextField("Enter card name", text: $viewModel.name, onCommit: handleSearch)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
@@ -47,6 +47,10 @@ struct SearchView: View {
                 SearchFilterView(showFilters: $viewModel.showFilters, filters: $viewModel.filters)
             }
         }
+    }
+    
+    func handleSearch() {
+        Task { await viewModel.search() }
     }
 }
 
