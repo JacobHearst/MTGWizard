@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RulebookView: View {
-    @StateObject private var viewModel = RulebookViewModel()
+    @ObservedObject private var viewModel = RulebookViewModel()
 
     var body: some View {
         NavigationStack {
