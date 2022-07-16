@@ -11,10 +11,8 @@ import ScryfallKit
 struct SavedCardsTab: View {
     @AppStorage("SavedCards") var savedCards = [Card]()
     
-    @State private var path = NavigationPath()
-    
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             VStack {
                 if savedCards.isEmpty {
                     HStack {

@@ -34,7 +34,7 @@ struct LandingView: View {
                     Text("Rulebook")
                 }
                 .tag(TabSelection.rules)
-            SettingsView()
+            SettingsTab()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
