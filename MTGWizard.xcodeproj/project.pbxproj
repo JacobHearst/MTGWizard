@@ -19,7 +19,7 @@
 		066A1E1A27205D2F00211FA8 /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A1E1927205D2F00211FA8 /* ColorSelector.swift */; };
 		0681F2C62874C7650010E1B6 /* LegalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2C52874C7650010E1B6 /* LegalityView.swift */; };
 		0681F2CA2874CD110010E1B6 /* Legality+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2C92874CD110010E1B6 /* Legality+Color.swift */; };
-		0681F2D3287524830010E1B6 /* SavedCardListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2D2287524830010E1B6 /* SavedCardListsView.swift */; };
+		0681F2D3287524830010E1B6 /* SavedCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2D2287524830010E1B6 /* SavedCardsView.swift */; };
 		069813E5286F905500D00C2E /* RulebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E4286F905500D00C2E /* RulebookView.swift */; };
 		069813E8286F906700D00C2E /* RulebookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E7286F906700D00C2E /* RulebookViewModel.swift */; };
 		069813EB286F909A00D00C2E /* RulesKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813EA286F909A00D00C2E /* RulesKit.swift */; };
@@ -89,7 +89,7 @@
 		066A1E1927205D2F00211FA8 /* ColorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelector.swift; sourceTree = "<group>"; };
 		0681F2C52874C7650010E1B6 /* LegalityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityView.swift; sourceTree = "<group>"; };
 		0681F2C92874CD110010E1B6 /* Legality+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Legality+Color.swift"; sourceTree = "<group>"; };
-		0681F2D2287524830010E1B6 /* SavedCardListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardListsView.swift; sourceTree = "<group>"; };
+		0681F2D2287524830010E1B6 /* SavedCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCardsView.swift; sourceTree = "<group>"; };
 		069813E4286F905500D00C2E /* RulebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookView.swift; sourceTree = "<group>"; };
 		069813E7286F906700D00C2E /* RulebookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookViewModel.swift; sourceTree = "<group>"; };
 		069813EA286F909A00D00C2E /* RulesKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesKit.swift; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 		0681F2D12875246C0010E1B6 /* SavedCardLists */ = {
 			isa = PBXGroup;
 			children = (
-				0681F2D2287524830010E1B6 /* SavedCardListsView.swift */,
+				0681F2D2287524830010E1B6 /* SavedCardsView.swift */,
 			);
 			path = SavedCardLists;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 				2A94C9BE287C79E700E25849 /* SearchView.swift in Sources */,
 				06BFD8C3271B842A00DCF862 /* SearchFilterView.swift in Sources */,
 				062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */,
-				0681F2D3287524830010E1B6 /* SavedCardListsView.swift in Sources */,
+				0681F2D3287524830010E1B6 /* SavedCardsView.swift in Sources */,
 				0698140128714D2C00D00C2E /* RaritySelector.swift in Sources */,
 				069813FD2871380000D00C2E /* ManaSymbolToggle.swift in Sources */,
 				060AE36326E7AD3100D8F881 /* SearchViewTab.swift in Sources */,

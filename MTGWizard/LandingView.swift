@@ -22,7 +22,7 @@ struct LandingView: View {
                     Text("Search")
                 }
                 .tag(TabSelection.search)
-            SavedCardListsView()
+            SavedCardsView()
                 .tabItem {
                     Image(systemName: "tray.2.fill")
                     Text("Saved Cards")
