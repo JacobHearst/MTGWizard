@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchViewTab: View {
+struct SearchTab: View {
     var body: some View {
         NavigationStack {
             SearchView()
@@ -18,6 +18,6 @@ struct SearchViewTab: View {
 
 struct SearchViewTab_Previews: PreviewProvider {
     static var previews: some View {
-        SearchViewTab()
+        SearchTab()
     }
 }

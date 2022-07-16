@@ -8,7 +8,7 @@
 import SwiftUI
 import ScryfallKit
 
-struct SavedCardsView: View {
+struct SavedCardsTab: View {
     @AppStorage("SavedCards") var savedCards = [Card]()
     
     @State private var path = NavigationPath()

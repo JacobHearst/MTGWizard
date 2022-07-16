@@ -16,19 +16,19 @@ struct LandingView: View {
 
     var body: some View {
         TabView(selection: $tab) {
-            SearchViewTab()
+            SearchTab()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
                 .tag(TabSelection.search)
-            SavedCardsView()
+            SavedCardsTab()
                 .tabItem {
                     Image(systemName: "tray.2.fill")
                     Text("Saved Cards")
                 }
                 .tag(TabSelection.saved)
-            RulebookView()
+            RulebookTab()
                 .tabItem {
                     Image(systemName: "text.book.closed")
                     Text("Rulebook")

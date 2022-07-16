@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct SettingsTab: View {
     @AppStorage("HideAlchemy") var hideAlchemy = false
 
     var body: some View {
@@ -23,6 +23,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsTab()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RulebookView: View {
+struct RulebookTab: View {
     @ObservedObject private var viewModel = RulebookViewModel()
 
     var body: some View {
@@ -55,6 +55,6 @@ struct RulebookView: View {
 
 struct RulesView_Previews: PreviewProvider {
     static var previews: some View {
-        RulebookView()
+        RulebookTab()
     }
 }
