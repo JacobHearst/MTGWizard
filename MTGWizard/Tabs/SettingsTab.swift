@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsTab: View {
     @AppStorage("HideAlchemy") var hideAlchemy = false
+    @AppStorage("UseQuerySearch") var useQuerySearch = false
 
     var body: some View {
         NavigationStack {
@@ -16,6 +17,9 @@ struct SettingsTab: View {
                 Section("Search") {
                     Toggle(isOn: $hideAlchemy) {
                         Text("Hide Alchemy cards")
+                    }
+                    Toggle(isOn: $useQuerySearch) {
+                        Text("Search using Scryfall syntax instead of name")
                     }
                 }
             }

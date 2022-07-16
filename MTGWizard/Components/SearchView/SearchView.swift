@@ -14,10 +14,10 @@ struct SearchView: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Enter card name", text: $viewModel.name, onCommit: handleSearch)
+                TextField(viewModel.searchPlaceholder, text: $viewModel.searchText, onCommit: handleSearch)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
-                    .modifier(ClearButton(text: $viewModel.name))
+                    .modifier(ClearButton(text: $viewModel.searchText))
 
                 Image(systemName: "line.horizontal.3.decrease.circle")
                     .onTapGesture { viewModel.showFilters.toggle() }
@@ -57,7 +57,7 @@ struct SearchView: View {
     }
     
     func handleSearch() {
-        viewModel.search()
+        Task { await viewModel.search() }
     }
 }
 

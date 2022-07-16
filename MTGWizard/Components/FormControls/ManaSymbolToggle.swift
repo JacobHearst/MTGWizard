@@ -20,7 +20,7 @@ struct ManaSymbolToggle: View {
     var body: some View {
         Image("{\(color.rawValue)}")
             .resizable()
-            .frame(width: 40, height: 40)
+            .frame(width: 30, height: 30)
             .onTapGesture {
                 selected.toggle()
                 delegate.didToggle(color: color)

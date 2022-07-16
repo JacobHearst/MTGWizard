@@ -18,6 +18,7 @@ struct ColorSelector: View, ManaSymbolToggleDelegate {
             ManaSymbolToggle(color: .B, delegate: self)
             ManaSymbolToggle(color: .R, delegate: self)
             ManaSymbolToggle(color: .G, delegate: self)
+            ManaSymbolToggle(color: .C, delegate: self)
         }
     }
 

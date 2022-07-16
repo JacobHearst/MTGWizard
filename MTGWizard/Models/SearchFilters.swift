@@ -36,7 +36,9 @@ enum ColorFilterOption: String, CaseIterable {
 
 struct SearchFilters {
     var oracleText = ""
+    var flavorText = ""
     var typeLine = ""
+    var name = ""
     var colors = [ScryfallKit.Color]()
     var colorFilterOption: ColorFilterOption = .exact
     var colorIdentity = [ScryfallKit.Color]()
@@ -50,10 +52,9 @@ struct SearchFilters {
             filters.append(.oracleText(oracleText))
         }
 
-        if !typeLine.isEmpty {
-            typeLine.split(separator: " ").forEach { type in
-                filters.append(.type(String(type)))
-            }
+
+        for type in typeLine.split(separator: " ") {
+            filters.append(.type(String(type)))
         }
 
         if !colors.isEmpty {
@@ -77,6 +78,14 @@ struct SearchFilters {
         let rarityFilters: [CardFieldFilter] = rarities.map { .rarity($0.rawValue) }
         if !rarityFilters.isEmpty {
             filters.append(.compoundOr(rarityFilters))
+        }
+        
+        if !name.isEmpty {
+            filters.append(.name(name))
+        }
+        
+        if !flavorText.isEmpty {
+            filters.append(.flavor(flavorText))
         }
 
         return filters
