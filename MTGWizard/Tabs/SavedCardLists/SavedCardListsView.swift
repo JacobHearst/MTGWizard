@@ -9,51 +9,21 @@ import SwiftUI
 import ScryfallKit
 
 struct SavedCardListsView: View {
-    @AppStorage("CardLists") var cardLists = [CardList]()
     @AppStorage("SavedCards") var savedCards = [Card]()
-    
-    var savedCardsList: CardList {
-        CardList(name: "Saved", cards: savedCards)
-    }
 
     var body: some View {
         NavigationStack {
-            List {
-                NavigationLink("Saved", destination: CardListDetailView(list: savedCardsList))
-                ForEach(cardLists, content: listLink)
-            }
-            .navigationTitle("Your Lists")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: showCreateList) {
-                        Image(systemName: "plus.circle")
-                    }
-                }
-            }
+            CardGrid(cards: savedCards)
+                .navigationTitle("Saved Cards")
+                .padding()
+//            .toolbar {
+//                ToolbarItem(placement: .primaryAction) {
+//                    Button(action: showCreateList) {
+//                        Image(systemName: "plus.circle")
+//                    }
+//                }
+//            }
         }
-    }
-    
-    func listLink(_ list: CardList) -> some View {
-        NavigationLink(list.name, destination: CardListDetailView(list: list))
-            .swipeActions {
-                Button(role: .destructive, action: { deleteList(list) }) {
-                    Label("Delete", systemImage: "trash")
-                }
-            }
-    }
-    
-    func showCreateList() {
-        presentTextFieldAlert(title: "Create List",
-                              message: "Create a new list",
-                              hintText: "List name",
-                              primaryActionTitle: "Create",
-                              secondaryActionTitle: "Cancel",
-                              primaryAction: { cardLists.append(CardList(name: $0, cards: [])) },
-                              secondaryAction: {})
-    }
-    
-    func deleteList(_ list: CardList) {
-        cardLists.removeAll { $0 == list }
     }
 }
 

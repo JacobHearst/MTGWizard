@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct SearchViewTab: View {
-    var activeList: CardList? = nil
-
     var body: some View {
         NavigationStack {
-            SearchView(activeList: activeList)
+            SearchView()
                 .navigationBarHidden(true)
         }
     }

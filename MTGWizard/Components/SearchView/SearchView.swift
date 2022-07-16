@@ -10,7 +10,6 @@ import ScryfallKit
 
 struct SearchView: View {
     @ObservedObject private var viewModel = SearchViewModel()
-    var activeList: CardList? = nil
     
     var body: some View {
         VStack {
@@ -46,8 +45,7 @@ struct SearchView: View {
 
             SearchViewBody(isLoading: viewModel.isLoading,
                            error: viewModel.error,
-                           results: viewModel.results,
-                           activeList: activeList)
+                           results: viewModel.results)
 
         }
         .padding()
