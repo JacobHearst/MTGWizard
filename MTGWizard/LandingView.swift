@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LandingView: View {
     enum TabSelection {
-        case search, saved, rules
+        case search, saved, rules, settings
     }
     
     @State private var tab: TabSelection = .saved
@@ -34,6 +34,12 @@ struct LandingView: View {
                     Text("Rulebook")
                 }
                 .tag(TabSelection.rules)
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+                .tag(TabSelection.settings)
         }
     }
 }

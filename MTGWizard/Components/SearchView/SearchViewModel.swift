@@ -7,9 +7,11 @@
 
 import Foundation
 import ScryfallKit
+import SwiftUI
 
 @MainActor
 final class SearchViewModel: ObservableObject {
+    @AppStorage("HideAlchemy") var hideAlchemy = false
     @Published var name = ""
     @Published var results = [Card]()
     @Published var isLoading = false
@@ -35,6 +37,11 @@ final class SearchViewModel: ObservableObject {
         }
 
         guard searchFilters.count > 0 else { return }
+        
+        if hideAlchemy {
+            // FIXME: ScryfallKit needs an update to support negating filters. This should do the trick for now
+            searchFilters.append(.game(.paper))
+        }
 
         // Clear previous results/errors and show loading indicator
         results = []
