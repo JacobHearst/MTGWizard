@@ -12,59 +12,61 @@ struct SearchFilterView: View {
     @Binding var filters: SearchFilters
 
     var body: some View {
-        Form {
-            Section("Card Text") {
-                VStack(alignment: .leading) {
-                        Text("Text")
-                            .font(.headline)
-                            .listRowInsets(EdgeInsets())
-                        TextField("Any words in the rules box", text: $filters.oracleText)
+        NavigationStack {
+            Form {
+                Section("Card Text") {
+                    VStack(alignment: .leading) {
+                            Text("Text")
+                                .font(.headline)
+                                .listRowInsets(EdgeInsets())
+                            TextField("Any words in the rules box", text: $filters.oracleText)
 
-                        Text("Types")
+                            Text("Types")
+                                .font(.headline)
+                            TextField("ex: Legendary Artifact Horror", text: $filters.typeLine)
+                    }.padding([.top, .bottom])
+                }
+
+                Section("Colors") {
+                    VStack(alignment: .leading) {
+                            Text("Colors")
+                                .font(.headline)
+                            ColorSelector(selectedColors: $filters.colors)
+                            HStack {
+                                Text("Find cards that:")
+                                Picker("", selection: $filters.colorFilterOption) {
+                                    ForEach(ColorFilterOption.allCases, id: \.self) { option in
+                                        Text(option.label)
+                                    }
+                                }.pickerStyle(MenuPickerStyle())
+                            }
+
+                            Text("Commander Identity")
+                                .font(.headline)
+                            ColorSelector(selectedColors: $filters.colorIdentity)
+
+                            Text("Mana Cost")
+                                .font(.headline)
+                            TextField("{W}{U}{B}{R}{G}{C}", text: $filters.manaCost)
+                    }.padding([.top, .bottom])
+                }
+
+                Section("Metadata") {
+                    VStack(alignment: .leading) {
+                        Text("Rarity")
                             .font(.headline)
-                        TextField("ex: Legendary Artifact Horror", text: $filters.typeLine)
-                }.padding([.top, .bottom])
+                        RaritySelector(selection: $filters.rarities)
+                    }.padding([.top, .bottom])
+                }
             }
-
-            Section("Colors") {
-                VStack(alignment: .leading) {
-                        Text("Colors")
-                            .font(.headline)
-                        ColorSelector(selectedColors: $filters.colors)
-                        HStack {
-                            Text("Find cards that:")
-                            Picker("", selection: $filters.colorFilterOption) {
-                                ForEach(ColorFilterOption.allCases, id: \.self) { option in
-                                    Text(option.label)
-                                }
-                            }.pickerStyle(MenuPickerStyle())
-                        }
-
-                        Text("Commander Identity")
-                            .font(.headline)
-                        ColorSelector(selectedColors: $filters.colorIdentity)
-
-                        Text("Mana Cost")
-                            .font(.headline)
-                        TextField("{W}{U}{B}{R}{G}{C}", text: $filters.manaCost)
-                }.padding([.top, .bottom])
-            }
-
-            Section("Metadata") {
-                VStack(alignment: .leading) {
-                    Text("Rarity")
-                        .font(.headline)
-                    RaritySelector(selection: $filters.rarities)
-                }.padding([.top, .bottom])
-            }
+            .textFieldStyle(.roundedBorder)
+            .navigationBarTitle(Text("Filters"), displayMode: .inline)
+            .navigationBarItems(trailing: Button(action: {
+                self.showFilters = false
+            }) {
+                Text("Apply").bold()
+            })
         }
-        .textFieldStyle(.roundedBorder)
-        .navigationBarTitle(Text("Search Filters"), displayMode: .inline)
-        .navigationBarItems(trailing: Button(action: {
-            self.showFilters = false
-        }) {
-            Text("Apply").bold()
-        })
     }
 }
 

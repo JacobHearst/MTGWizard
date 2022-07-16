@@ -11,12 +11,16 @@ struct SettingsTab: View {
     @AppStorage("HideAlchemy") var hideAlchemy = false
 
     var body: some View {
-        Form {
-            Section("Search") {
-                Toggle(isOn: $hideAlchemy) {
-                    Text("Hide Alchemy cards")
+        NavigationStack {
+            Form {
+                Section("Search") {
+                    Toggle(isOn: $hideAlchemy) {
+                        Text("Hide Alchemy cards")
+                    }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Settings")
         }
     }
 }

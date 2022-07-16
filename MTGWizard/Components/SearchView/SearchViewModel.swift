@@ -31,16 +31,12 @@ final class SearchViewModel: ObservableObject {
     }
 
     func search() {
-        var searchFilters = filters.scryfallKitFilters
-        if !name.isEmpty {
-            searchFilters.append(.name(name))
-        }
-
+        var searchFilters = filters.scryfallKitFilters + [.name(name)]
         guard searchFilters.count > 0 else { return }
         
         if hideAlchemy {
             // FIXME: ScryfallKit needs an update to support negating filters. This should do the trick for now
-            searchFilters.append(.game(.paper))
+            searchFilters += [.game(.paper), .game(.mtgo)]
         }
 
         // Clear previous results/errors and show loading indicator

@@ -11,7 +11,8 @@ struct SearchTab: View {
     var body: some View {
         NavigationStack {
             SearchView()
-                .navigationBarHidden(true)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Search")
         }
     }
 }

@@ -10,7 +10,7 @@ import ScryfallKit
 
 struct SearchView: View {
     @ObservedObject private var viewModel = SearchViewModel()
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -21,6 +21,7 @@ struct SearchView: View {
 
                 Image(systemName: "line.horizontal.3.decrease.circle")
                     .onTapGesture { viewModel.showFilters.toggle() }
+                    .foregroundColor(.blue)
             }
             
             HStack {
@@ -49,7 +50,7 @@ struct SearchView: View {
 
         }
         .padding()
-        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden)
         .sheet(isPresented: $viewModel.showFilters) {
             SearchFilterView(showFilters: $viewModel.showFilters, filters: $viewModel.filters)
         }
