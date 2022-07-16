@@ -10,6 +10,7 @@ import ScryfallKit
 
 struct SavedCardsTab: View {
     @AppStorage("SavedCards") var savedCards = [Card]()
+    @State private var showSearch = false
     
     var body: some View {
         NavigationStack {
@@ -17,7 +18,7 @@ struct SavedCardsTab: View {
                 if savedCards.isEmpty {
                     HStack {
                         Text("Add cards by tapping the ")
-                        addCardsLink
+                        addCardsButton
                     }
                 } else {
                     CardGrid(cards: savedCards)
@@ -26,16 +27,21 @@ struct SavedCardsTab: View {
             }
             .navigationTitle("Saved Cards")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    addCardsLink
-                }
+            .toolbar { toolbar }
+            .sheet(isPresented: $showSearch) {
+                NavigationView { SearchView() }
             }
         }
     }
     
-    var addCardsLink: some View {
-        NavigationLink(destination: SearchView()) {
+    var toolbar: ToolbarItem<(), some View> {
+        ToolbarItem(placement: .primaryAction) {
+            addCardsButton
+        }
+    }
+    
+    var addCardsButton: some View {
+        Button(action: { showSearch.toggle() }) {
             Image(systemName: "plus.circle")
         }
     }

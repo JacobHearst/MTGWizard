@@ -15,11 +15,11 @@ struct SettingsTab: View {
         NavigationStack {
             Form {
                 Section("Search") {
+                    Toggle(isOn: $useQuerySearch) {
+                        Text("Enable Scryfall syntax")
+                    }
                     Toggle(isOn: $hideAlchemy) {
                         Text("Hide Alchemy cards")
-                    }
-                    Toggle(isOn: $useQuerySearch) {
-                        Text("Search using Scryfall syntax instead of name")
                     }
                 }
             }

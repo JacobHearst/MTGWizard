@@ -23,7 +23,7 @@ final class SearchViewModel: ObservableObject {
     @Published var filters = SearchFilters()
     @Published var sortMode: SortMode = .name { didSet { Task { await search() }}}
     @Published var sortDirection: SortDirection = .auto { didSet { Task { await search() }}}
-    @Published var showFilters = true {
+    @Published var showFilters = false {
         didSet {
             guard !showFilters else { return }
             Task { await search() }
@@ -33,7 +33,7 @@ final class SearchViewModel: ObservableObject {
     let defaultQuery = "mana=4gg o:trample pow:6 tou:6"
     let defaultName = "Teferi"
     var searchPlaceholder: String {
-        useQuerySearch ? defaultQuery : defaultName
+        "e.g. " + (useQuerySearch ? defaultQuery : defaultName)
     }
 
     init() {
