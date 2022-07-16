@@ -17,7 +17,7 @@ struct SavedCardListsView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 NavigationLink("Saved", destination: CardListDetailView(list: savedCardsList))
                 ForEach(cardLists, content: listLink)

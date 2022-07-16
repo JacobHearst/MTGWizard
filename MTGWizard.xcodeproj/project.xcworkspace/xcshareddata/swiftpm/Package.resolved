@@ -3,10 +3,10 @@
     {
       "identity" : "scryfallkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/JacobHearst/ScryfallKit.git",
+      "location" : "https://github.com/JacobHearst/ScryfallKit",
       "state" : {
-        "revision" : "bee63ee16df4530c83809ace786f1250320dae95",
-        "version" : "2.4.0"
+        "revision" : "737a826eff5d3da621d5fdabcd45ec06fd9cd5ba",
+        "version" : "2.5.0"
       }
     }
   ],

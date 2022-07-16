@@ -11,7 +11,7 @@ struct SearchViewTab: View {
     var activeList: CardList? = nil
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             SearchView(activeList: activeList)
                 .navigationBarHidden(true)
         }

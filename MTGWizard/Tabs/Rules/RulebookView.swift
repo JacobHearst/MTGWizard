@@ -11,7 +11,7 @@ struct RulebookView: View {
     @StateObject private var viewModel = RulebookViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             if let error = viewModel.error {
                 // Show error
                 Text("Error: \(error)")

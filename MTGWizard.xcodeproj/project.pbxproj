@@ -15,7 +15,6 @@
 		062A5D75265F1803009FACCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062A5D74265F1803009FACCB /* Assets.xcassets */; };
 		062A5D78265F1803009FACCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 062A5D77265F1803009FACCB /* Preview Assets.xcassets */; };
 		063A799526EA9DB000C0195C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A799426EA9DB000C0195C /* SearchViewModel.swift */; };
-		063BE03126E3DD3000E9AC0B /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 063BE03026E3DD3000E9AC0B /* ScryfallKit */; };
 		06666A792700ED4D008087EB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06666A782700ED4D008087EB /* Errors.swift */; };
 		066A1E1A27205D2F00211FA8 /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A1E1927205D2F00211FA8 /* ColorSelector.swift */; };
 		0681F2C62874C7650010E1B6 /* LegalityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681F2C52874C7650010E1B6 /* LegalityView.swift */; };
@@ -45,11 +44,11 @@
 		2A225336287B6CEF005FE78E /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A225335287B6CEF005FE78E /* CardList.swift */; };
 		2A225338287B6E07005FE78E /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A225337287B6E07005FE78E /* Array+RawRepresentable.swift */; };
 		2A22533A287B7483005FE78E /* CardListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A225339287B7483005FE78E /* CardListDetailView.swift */; };
-		2A22533E287BA427005FE78E /* Card+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A22533D287BA427005FE78E /* Card+Equatable.swift */; };
 		2A94C9B1287BBB3C00E25849 /* CardDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B0287BBB3C00E25849 /* CardDescriptionViewModel.swift */; };
 		2A94C9B5287BC73A00E25849 /* SearchViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B4287BC73A00E25849 /* SearchViewBody.swift */; };
 		2A94C9B7287C551200E25849 /* View+TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9B6287C551200E25849 /* View+TextFieldAlert.swift */; };
 		2A94C9BE287C79E700E25849 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9BD287C79E700E25849 /* SearchView.swift */; };
+		2AA021EE2882419600DDE976 /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2AA021ED2882419600DDE976 /* ScryfallKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +117,6 @@
 		2A225335287B6CEF005FE78E /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		2A225337287B6E07005FE78E /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
 		2A225339287B7483005FE78E /* CardListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListDetailView.swift; sourceTree = "<group>"; };
-		2A22533D287BA427005FE78E /* Card+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Equatable.swift"; sourceTree = "<group>"; };
 		2A94C9B0287BBB3C00E25849 /* CardDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDescriptionViewModel.swift; sourceTree = "<group>"; };
 		2A94C9B4287BC73A00E25849 /* SearchViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewBody.swift; sourceTree = "<group>"; };
 		2A94C9B6287C551200E25849 /* View+TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TextFieldAlert.swift"; sourceTree = "<group>"; };
@@ -130,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				063BE03126E3DD3000E9AC0B /* ScryfallKit in Frameworks */,
+				2AA021EE2882419600DDE976 /* ScryfallKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +191,7 @@
 			children = (
 				069813E9286F909200D00C2E /* Models */,
 				06F77C0C26E82E61005C35C0 /* MockData */,
-				0659446326A603E400A8A03B /* Scenes */,
+				0659446326A603E400A8A03B /* Tabs */,
 				069813F7286F9DF300D00C2E /* Extensions */,
 				0659446826A6077C00A8A03B /* Components */,
 				06666A782700ED4D008087EB /* Errors.swift */,
@@ -214,14 +212,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0659446326A603E400A8A03B /* Scenes */ = {
+		0659446326A603E400A8A03B /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
 				0681F2D12875246C0010E1B6 /* SavedCardLists */,
 				069813E6286F905E00D00C2E /* Rules */,
 				060AE36126E7AD2400D8F881 /* Search */,
 			);
-			path = Scenes;
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		0659446826A6077C00A8A03B /* Components */ = {
@@ -283,7 +281,6 @@
 			children = (
 				0681F2C92874CD110010E1B6 /* Legality+Color.swift */,
 				2A225337287B6E07005FE78E /* Array+RawRepresentable.swift */,
-				2A22533D287BA427005FE78E /* Card+Equatable.swift */,
 				2A94C9B6287C551200E25849 /* View+TextFieldAlert.swift */,
 			);
 			path = Extensions;
@@ -373,7 +370,7 @@
 			);
 			name = MTGWizard;
 			packageProductDependencies = (
-				063BE03026E3DD3000E9AC0B /* ScryfallKit */,
+				2AA021ED2882419600DDE976 /* ScryfallKit */,
 			);
 			productName = MTGWizard;
 			productReference = 062A5D6D265F1802009FACCB /* MTGWizard.app */;
@@ -425,7 +422,7 @@
 			);
 			mainGroup = 062A5D64265F1802009FACCB;
 			packageReferences = (
-				063BE02F26E3DD3000E9AC0B /* XCRemoteSwiftPackageReference "ScryfallKit" */,
+				2AA021EC2882419600DDE976 /* XCRemoteSwiftPackageReference "ScryfallKit" */,
 			);
 			productRefGroup = 062A5D6E265F1802009FACCB /* Products */;
 			projectDirPath = "";
@@ -485,7 +482,6 @@
 				06A5F61026FACA0D00E422A8 /* RulingsList.swift in Sources */,
 				0681F2CA2874CD110010E1B6 /* Legality+Color.swift in Sources */,
 				2A94C9BE287C79E700E25849 /* SearchView.swift in Sources */,
-				2A22533E287BA427005FE78E /* Card+Equatable.swift in Sources */,
 				06BFD8C3271B842A00DCF862 /* SearchFilterView.swift in Sources */,
 				062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */,
 				0681F2D3287524830010E1B6 /* SavedCardListsView.swift in Sources */,
@@ -570,7 +566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -625,7 +621,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -642,10 +638,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MTGWizard/Preview Content\"";
-				DEVELOPMENT_TEAM = F8SAUD58HS;
+				DEVELOPMENT_TEAM = 483DWKW443;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MTGWizard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,10 +661,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MTGWizard/Preview Content\"";
-				DEVELOPMENT_TEAM = F8SAUD58HS;
+				DEVELOPMENT_TEAM = 483DWKW443;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MTGWizard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,20 +758,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		063BE02F26E3DD3000E9AC0B /* XCRemoteSwiftPackageReference "ScryfallKit" */ = {
+		2AA021EC2882419600DDE976 /* XCRemoteSwiftPackageReference "ScryfallKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JacobHearst/ScryfallKit.git";
+			repositoryURL = "https://github.com/JacobHearst/ScryfallKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		063BE03026E3DD3000E9AC0B /* ScryfallKit */ = {
+		2AA021ED2882419600DDE976 /* ScryfallKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 063BE02F26E3DD3000E9AC0B /* XCRemoteSwiftPackageReference "ScryfallKit" */;
+			package = 2AA021EC2882419600DDE976 /* XCRemoteSwiftPackageReference "ScryfallKit" */;
 			productName = ScryfallKit;
 		};
 /* End XCSwiftPackageProductDependency section */
