@@ -50,6 +50,15 @@ struct CardDescription: View {
                         .italic()
                         .fixedSize(horizontal: false, vertical: true)
                     
+                    if let power = power, let toughness = toughness {
+                        Divider()
+                        HStack {
+                            Spacer()
+                            Text("\(power)/\(toughness)")
+                        }
+                        Divider()
+                    }
+                    
                     DisclosureGroup("Pricing", isExpanded: $isPricesExpanded) {
                         if viewModel.isLoadingPrintings {
                             ProgressView()
@@ -72,6 +81,14 @@ struct CardDescription: View {
                 }
             }
         }
+    }
+    
+    var power: String? {
+        card.cardFaces != nil ? try? card.getAttributeForFace(keyPath: \.power, useSecondFace: viewingSecondFace) : card.power
+    }
+    
+    var toughness: String? {
+        card.cardFaces != nil ? try? card.getAttributeForFace(keyPath: \.toughness, useSecondFace: viewingSecondFace) : card.toughness
     }
     
     var cardFlavorText: String? {

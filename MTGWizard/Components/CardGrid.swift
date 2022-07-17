@@ -9,39 +9,40 @@ import SwiftUI
 import ScryfallKit
 
 struct CardGrid: View {
-    var cards: [Card]
+    @Binding var cards: [Card]
 
     private var columns: [GridItem] = Array(
         repeating: .init(.flexible()),
         count: 2
     )
 
-    init(cards: [Card]) {
-        self.cards = cards
+    init(cards: Binding<[Card]>) {
+        self._cards = cards
     }
 
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(cards, content: imageLink)
+                ForEach($cards, content: imageLink)
             }
         }
     }
     
-    func imageLink(card: Card) -> some View {
-        NavigationLink(destination: SingleCardView(card: card, printing: card)) {
-            if let url = card.getImageURL(types: [.png, .normal]) {
+    func imageLink(card: Binding<Card>) -> some View {
+        let unwrapped = card.wrappedValue
+        return NavigationLink(destination: SingleCardView(card: unwrapped, printing: card)) {
+            if let url = unwrapped.getImageURL(types: [.png, .normal]) {
                 AsyncImage(url: url, content: { image in
                     image.resizable()
                          .scaledToFit()
                 }) {
                     VStack {
-                        Text(card.name)
+                        Text(unwrapped.name)
                         ProgressView()
                     }
                 }
             } else {
-                Text("No image for \(card.name)")
+                Text("No image for \(unwrapped.name)")
             }
         }
     }
@@ -49,6 +50,6 @@ struct CardGrid: View {
 
 struct CardGrid_Previews: PreviewProvider {
     static var previews: some View {
-        CardGrid(cards: [])
+        CardGrid(cards: .constant([]))
     }
 }

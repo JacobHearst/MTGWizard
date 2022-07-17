@@ -25,7 +25,7 @@ struct SearchViewBody: View {
                 .padding(.top)
         }
         
-        CardGrid(cards: results)
+        CardGrid(cards: .constant(results))
     }
 }
 

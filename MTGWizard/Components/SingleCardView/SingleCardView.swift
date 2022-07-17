@@ -11,20 +11,20 @@ import ScryfallKit
 struct SingleCardView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @AppStorage("SavedCards") var savedCards = [Card]()
-
+    
     @State private var viewingSecondFace = false
     var isSaved: Bool {
         savedCards.contains { $0 == card }
     }
-
+    
     var card: Card
-    @State var printing: Card
-
+    @Binding var printing: Card
+    
     var body: some View {
         GeometryReader { geo in
             ScrollView {
                 buildAsyncImage(geometry: geo)
-
+                
                 HStack {
                     saveButton
                     if let viewSecondFaceString = viewSecondFaceString {
@@ -33,7 +33,7 @@ struct SingleCardView: View {
                         }
                     }
                 }
-
+                
                 CardDescription(card: $printing, viewingSecondFace: viewingSecondFace)
             }
         }.navigationBarTitleDisplayMode(.inline)
@@ -93,7 +93,7 @@ struct SingleCardView: View {
     var cardRotationAngle: Angle {
         guard viewingSecondFace else { return .zero }
         let oracleText = try? printing.getAttributeForFace(keyPath: \.oracleText, useSecondFace: viewingSecondFace)
-
+        
         switch printing.layout {
         case .flip:
             return .init(degrees: 180)

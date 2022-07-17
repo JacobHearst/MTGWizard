@@ -21,7 +21,7 @@ struct SavedCardsTab: View {
                         addCardsButton
                     }
                 } else {
-                    CardGrid(cards: savedCards)
+                    CardGrid(cards: $savedCards)
                         .padding()
                 }
             }
