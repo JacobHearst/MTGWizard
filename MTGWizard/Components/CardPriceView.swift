@@ -11,6 +11,15 @@ import ScryfallKit
 struct CardPriceView: View {
     @Binding var selectedPrinting: Card
     var printings: [Card]
+    
+    var sortedPrintings: [Card] {
+        var sortedPrintings = printings.sorted { $0.set < $1.set }
+
+        sortedPrintings.removeAll { $0 == selectedPrinting }
+        sortedPrintings.insert(selectedPrinting, at: 0)
+
+        return sortedPrintings
+    }
 
     var body: some View {
         Grid {
@@ -23,9 +32,9 @@ struct CardPriceView: View {
                 Text("TIX")
             }.bold()
             Divider()
-            ForEach(printings) { printing in
+            ForEach(sortedPrintings) { printing in
                 GridRow {
-                    Image(systemName: printing == selectedPrinting ? "circle.fill" : "circle")
+                    Image(systemName: imageName(for: printing))
                     Text(printing.collectorNumber)
                     Text(printing.set.uppercased())
                     Text(printing.prices.usd ?? "N/A")
@@ -36,5 +45,9 @@ struct CardPriceView: View {
                 Divider()
             }
         }
+    }
+    
+    func imageName(for printing: Card) -> String {
+        printing == selectedPrinting ? "circle.fill" : "circle"
     }
 }

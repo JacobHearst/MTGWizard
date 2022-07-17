@@ -11,13 +11,8 @@ import ScryfallKit
 struct CardGrid: View {
     @Binding var cards: [Card]
 
-    private var columns: [GridItem] = Array(
-        repeating: .init(.flexible()),
-        count: 2
-    )
-
-    init(cards: Binding<[Card]>) {
-        self._cards = cards
+    private var columns: [GridItem] {
+        Array(repeating: .init(.flexible()), count: 2)
     }
 
     var body: some View {
@@ -30,7 +25,7 @@ struct CardGrid: View {
     
     func imageLink(card: Binding<Card>) -> some View {
         let unwrapped = card.wrappedValue
-        return NavigationLink(destination: SingleCardView(card: unwrapped, printing: card)) {
+        return NavigationLink(destination: SingleCardView(card: card, printing: unwrapped)) {
             if let url = unwrapped.getImageURL(types: [.png, .normal]) {
                 AsyncImage(url: url, content: { image in
                     image.resizable()

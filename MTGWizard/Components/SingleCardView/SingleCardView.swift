@@ -13,12 +13,13 @@ struct SingleCardView: View {
     @AppStorage("SavedCards") var savedCards = [Card]()
     
     @State private var viewingSecondFace = false
+    
+    @Binding var card: Card
+    @State var printing: Card
+    
     var isSaved: Bool {
         savedCards.contains { $0 == card }
     }
-    
-    var card: Card
-    @Binding var printing: Card
     
     var body: some View {
         GeometryReader { geo in
@@ -35,6 +36,9 @@ struct SingleCardView: View {
                 }
                 
                 CardDescription(card: $printing, viewingSecondFace: viewingSecondFace)
+                    .onChange(of: printing) { printing in
+                        self.card = printing
+                    }
             }
         }.navigationBarTitleDisplayMode(.inline)
     }
@@ -66,7 +70,7 @@ struct SingleCardView: View {
             .scaledToFit()
             .rotationEffect(cardRotationAngle)
         
-        if viewingSecondFace && ![.transform, .flip, .modalDfc].contains(self.printing.layout) {
+        if viewingSecondFace && ![.transform, .flip, .modalDfc].contains(printing.layout) {
             return newImage.frame(maxHeight: geometry.size.width * 0.9)
         } else {
             return newImage.frame(maxWidth: geometry.size.width * 0.9)
@@ -111,7 +115,7 @@ struct SingleCardView: View {
     // MARK: Button handlers
     func toggleSaved() {
         if isSaved {
-            savedCards.removeAll { $0 == card }
+            savedCards.removeAll { $0.name == card.name }
         } else {
             savedCards.append(card)
         }
