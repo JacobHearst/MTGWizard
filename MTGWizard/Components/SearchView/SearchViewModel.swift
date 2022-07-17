@@ -14,7 +14,6 @@ final class SearchViewModel: ObservableObject {
     private var client = ScryfallClient()
 
     @AppStorage("HideAlchemy") var hideAlchemy = false
-    @AppStorage("UseQuerySearch") var useQuerySearch = false
     
     @Published var searchText = ""
     @Published var results = [Card]()
@@ -31,10 +30,6 @@ final class SearchViewModel: ObservableObject {
     }
     
     let defaultQuery = "mana=4gg o:trample pow:6 tou:6"
-    let defaultName = "Teferi"
-    var searchPlaceholder: String {
-        "e.g. " + (useQuerySearch ? defaultQuery : defaultName)
-    }
 
     init() {
         Task { await search() }
@@ -42,40 +37,26 @@ final class SearchViewModel: ObservableObject {
     
     // MARK: Search
     func search() async {
-        useQuerySearch ? await querySearch() : await filterSearch()
-    }
-    
-    func querySearch() async {
         resetSearchStatus()
 
-        var query = searchText.isEmpty && filters.scryfallKitFilters.isEmpty ? defaultQuery : searchText
+        var query = defaultQuery
+
+        // If any search terms were entered
+        if !searchText.isEmpty || !filters.scryfallKitFilters.isEmpty {
+            // Use them to make the base query
+            let filterString = filters.scryfallKitFilters
+                .map { $0.filterString }
+                .joined(separator: " ")
+
+            query = "\(searchText) \(filterString)"
+        }
+
         if hideAlchemy {
             query += " -format:Alchemy"
         }
         
         do {
             results = try await client.searchCards(query: query, order: sortMode, sortDirection: sortDirection).data
-        } catch {
-            self.error = error
-        }
-        
-        isLoading = false
-    }
-    
-    func filterSearch() async {
-        let searchValue = searchText.isEmpty && filters.scryfallKitFilters.isEmpty ? defaultName : searchText
-        var searchFilters = filters.scryfallKitFilters + [.name(searchValue)]
-        guard searchFilters.count > 0 else { return }
-        
-        if hideAlchemy {
-            // FIXME: ScryfallKit needs an update to support negating filters. This should do the trick for now
-            searchFilters += [.game(.paper), .game(.mtgo)]
-        }
-        
-        resetSearchStatus()
-
-        do {
-            results = try await client.searchCards(filters: searchFilters, order: sortMode, sortDirection: sortDirection).data
         } catch {
             self.error = error
         }

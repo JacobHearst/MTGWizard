@@ -9,15 +9,11 @@ import SwiftUI
 
 struct SettingsTab: View {
     @AppStorage("HideAlchemy") var hideAlchemy = false
-    @AppStorage("UseQuerySearch") var useQuerySearch = false
 
     var body: some View {
         NavigationStack {
             Form {
                 Section("Search") {
-                    Toggle(isOn: $useQuerySearch) {
-                        Text("Enable Scryfall syntax")
-                    }
                     Toggle(isOn: $hideAlchemy) {
                         Text("Hide Alchemy cards")
                     }
