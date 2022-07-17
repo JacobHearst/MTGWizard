@@ -28,8 +28,6 @@ final class SearchViewModel: ObservableObject {
             Task { await search() }
         }
     }
-    
-    let defaultQuery = "mana=4gg o:trample pow:6 tou:6"
 
     init() {
         Task { await search() }
@@ -39,17 +37,19 @@ final class SearchViewModel: ObservableObject {
     func search() async {
         resetSearchStatus()
 
-        var query = defaultQuery
-
-        // If any search terms were entered
-        if !searchText.isEmpty || !filters.scryfallKitFilters.isEmpty {
-            // Use them to make the base query
-            let filterString = filters.scryfallKitFilters
-                .map { $0.filterString }
-                .joined(separator: " ")
-
-            query = "\(searchText) \(filterString)"
+        // Unless search parameters were provided
+        guard !searchText.isEmpty || !filters.scryfallKitFilters.isEmpty else {
+            // Exit
+            isLoading = false
+            return
         }
+        
+        // Otherwise, use them to make the base query
+        let filterString = filters.scryfallKitFilters
+            .map { $0.filterString }
+            .joined(separator: " ")
+
+        var query = "\(searchText) \(filterString)"
 
         if hideAlchemy {
             query += " -format:Alchemy"

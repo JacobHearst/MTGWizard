@@ -14,7 +14,7 @@ struct SearchView: View {
     var body: some View {
         VStack {
             HStack {
-                TextField(viewModel.defaultQuery, text: $viewModel.searchText, onCommit: handleSearch)
+                TextField("mana=4gg o:trample pow:6 tou:6", text: $viewModel.searchText, onCommit: handleSearch)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
                     .modifier(ClearButton(text: $viewModel.searchText))
