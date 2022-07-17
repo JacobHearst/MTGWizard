@@ -24,22 +24,7 @@ struct SearchView: View {
                     .foregroundColor(.blue)
             }
             
-            HStack {
-                Text("Sort by:")
-                Picker("Sort by:", selection: $viewModel.sortMode) {
-                    ForEach(SortMode.allCases, id: \.rawValue) { mode in
-                        Text(mode.rawValue.capitalized).tag(mode)
-                    }
-                }.pickerStyle(MenuPickerStyle())
-                
-                Spacer()
-                
-                Picker("Sort Direction", selection: $viewModel.sortDirection) {
-                    ForEach(SortDirection.allCases, id: \.rawValue) { dir in
-                        Text(dir.rawValue.capitalized).tag(dir)
-                    }
-                }.pickerStyle(SegmentedPickerStyle())
-            }
+            CardSortControls(sortMode: $viewModel.sortMode, sortDir: $viewModel.sortDirection)
 
             Divider()
                 .padding(.top, 2)

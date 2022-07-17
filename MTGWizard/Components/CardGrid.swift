@@ -9,16 +9,18 @@ import SwiftUI
 import ScryfallKit
 
 struct CardGrid: View {
-    @Binding var cards: [Card]
-
     private var columns: [GridItem] {
         Array(repeating: .init(.flexible()), count: 2)
     }
 
+    @Binding var cards: [Card]
+
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach($cards, content: imageLink)
+        VStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach($cards, content: imageLink)
+                }
             }
         }
     }
