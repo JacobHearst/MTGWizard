@@ -52,7 +52,7 @@ final class SearchViewModel: ObservableObject {
         var query = "\(searchText) \(filterString)"
 
         if hideAlchemy {
-            query += " -format:Alchemy"
+            query += " (game:paper or game:mtgo)"
         }
         
         do {
