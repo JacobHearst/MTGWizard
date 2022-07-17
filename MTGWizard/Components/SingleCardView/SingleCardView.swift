@@ -13,14 +13,12 @@ struct SingleCardView: View {
     @AppStorage("SavedCards") var savedCards = [Card]()
 
     @State private var viewingSecondFace = false
-    @State private var isSaved = false
+    var isSaved: Bool {
+        savedCards.contains { $0 == card }
+    }
 
     var card: Card
-    
-    init(card: Card) {
-        self.card = card
-        _isSaved = State(initialValue: savedCards.contains { $0 == card })
-    }
+    @State var printing: Card
 
     var body: some View {
         GeometryReader { geo in
@@ -36,8 +34,7 @@ struct SingleCardView: View {
                     }
                 }
 
-                CardDescription(card: card, viewingSecondFace: viewingSecondFace)
-                    .padding()
+                CardDescription(card: $printing, viewingSecondFace: viewingSecondFace)
             }
         }.navigationBarTitleDisplayMode(.inline)
     }
@@ -54,12 +51,12 @@ struct SingleCardView: View {
     }
     
     func buildAsyncImage(geometry: GeometryProxy) -> some View {
-        if let url = card.getImageURL(types: [.png, .normal], getSecondFace: viewingSecondFace) {
+        if let url = printing.getImageURL(types: [.png, .normal], getSecondFace: viewingSecondFace) {
             return AnyView(AsyncImage(url: url, content: { image in
                 self.resizeCardImage(geometry: geometry, image: image)
             }) { ProgressView() })
         } else {
-            return AnyView(Text("No image for \(card.name)"))
+            return AnyView(Text("No image for [\(printing.set)] \(printing.name)"))
         }
     }
     
@@ -69,7 +66,7 @@ struct SingleCardView: View {
             .scaledToFit()
             .rotationEffect(cardRotationAngle)
         
-        if viewingSecondFace && ![.transform, .flip, .modalDfc].contains(self.card.layout) {
+        if viewingSecondFace && ![.transform, .flip, .modalDfc].contains(self.printing.layout) {
             return newImage.frame(maxHeight: geometry.size.width * 0.9)
         } else {
             return newImage.frame(maxWidth: geometry.size.width * 0.9)
@@ -79,7 +76,7 @@ struct SingleCardView: View {
     
     // MARK: Computed vars
     var viewSecondFaceString: String? {
-        switch card.layout {
+        switch printing.layout {
         case .flip:
             return "Flip"
         case .modalDfc:
@@ -95,9 +92,9 @@ struct SingleCardView: View {
     
     var cardRotationAngle: Angle {
         guard viewingSecondFace else { return .zero }
-        let oracleText = try? card.getAttributeForFace(keyPath: \.oracleText, useSecondFace: viewingSecondFace)
+        let oracleText = try? printing.getAttributeForFace(keyPath: \.oracleText, useSecondFace: viewingSecondFace)
 
-        switch card.layout {
+        switch printing.layout {
         case .flip:
             return .init(degrees: 180)
         case .split:
@@ -110,17 +107,13 @@ struct SingleCardView: View {
             return .zero
         }
     }
-}
-
-// MARK: Button handlers
-extension SingleCardView {
+    
+    // MARK: Button handlers
     func toggleSaved() {
         if isSaved {
             savedCards.removeAll { $0 == card }
         } else {
             savedCards.append(card)
         }
-
-        isSaved.toggle()
     }
 }

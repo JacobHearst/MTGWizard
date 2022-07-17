@@ -10,13 +10,17 @@ import ScryfallKit
 
 struct CardDescription: View {
     @ObservedObject private var viewModel: CardDescriptionViewModel
-    var card: Card
+    @State private var isRulesExpanded = false
+    @State private var isLegalityExpanded = false
+    @State private var isPricesExpanded = true
+
+    @Binding var card: Card
     var viewingSecondFace: Bool
     
-    init(card: Card, viewingSecondFace: Bool) {
-        self.card = card
+    init(card: Binding<Card>, viewingSecondFace: Bool) {
+        self._card = card
         self.viewingSecondFace = viewingSecondFace
-        self.viewModel = CardDescriptionViewModel(card: card)
+        self.viewModel = CardDescriptionViewModel(card: card.wrappedValue)
     }
     
     var body: some View {
@@ -46,7 +50,15 @@ struct CardDescription: View {
                         .italic()
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    DisclosureGroup("Rulings", isExpanded: $viewModel.isRulesExpanded) {
+                    DisclosureGroup("Pricing", isExpanded: $isPricesExpanded) {
+                        if viewModel.isLoadingPrintings {
+                            ProgressView()
+                        } else {
+                            CardPriceView(selectedPrinting: $card, printings: viewModel.printings)
+                        }
+                    }
+                    
+                    DisclosureGroup("Rulings", isExpanded: $isRulesExpanded) {
                         if viewModel.isLoadingRulings {
                             ProgressView()
                         } else {
@@ -54,7 +66,7 @@ struct CardDescription: View {
                         }
                     }
                     
-                    DisclosureGroup("Legality", isExpanded: $viewModel.isLegalityExpanded) {
+                    DisclosureGroup("Legality", isExpanded: $isLegalityExpanded) {
                         LegalityView(card: card)
                     }
                 }
