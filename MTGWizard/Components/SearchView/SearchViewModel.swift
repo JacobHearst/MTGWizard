@@ -49,7 +49,10 @@ final class SearchViewModel: ObservableObject {
             .map { $0.filterString }
             .joined(separator: " ")
 
-        var query = "\(searchText) \(filterString)"
+        var query = "\(searchText)"
+        if !filterString.isEmpty {
+            query += " \(filterString)"
+        }
 
         if hideAlchemy {
             query += " (game:paper or game:mtgo)"
@@ -66,8 +69,8 @@ final class SearchViewModel: ObservableObject {
 
     /// Clear previous results/errors and show loading indicator
     func resetSearchStatus() {
+        isLoading = true
         results = []
         error = nil
-        isLoading = true
     }
 }

@@ -13,12 +13,7 @@ struct CardPriceView: View {
     var printings: [Card]
     
     var sortedPrintings: [Card] {
-        var sortedPrintings = printings.sorted { $0.set < $1.set }
-
-        sortedPrintings.removeAll { $0 == selectedPrinting }
-        sortedPrintings.insert(selectedPrinting, at: 0)
-
-        return sortedPrintings
+        printings.sorted { $0.set < $1.set }
     }
 
     var body: some View {

@@ -11,9 +11,10 @@ import ScryfallKit
 struct SavedCardsTab: View {
     @AppStorage("SavedCards") var savedCards = [Card]()
     @State private var showSearch = false
+    @EnvironmentObject var router: Router
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $router.savedCardsPath) {
             VStack {
                 if savedCards.isEmpty {
                     HStack {
@@ -29,7 +30,7 @@ struct SavedCardsTab: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbar }
             .sheet(isPresented: $showSearch) {
-                NavigationView { SearchView() }
+                NavigationStack { SearchView() }
             }
         }
     }

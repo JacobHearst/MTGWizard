@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SearchTab: View {
+    @EnvironmentObject var router: Router
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $router.searchPath) {
             SearchView()
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Search")
