@@ -12,8 +12,10 @@ struct CategoriesView: View {
 
     var body: some View {
         List(categories) { category in
-            NavigationLink(category.label, destination: SubcategoriesView(subcategories: category.subcategories, categoryName: category.title))
-        }.navigationTitle("Categories")
+            NavigationLink(category.label, value: category)
+        }
+        .navigationDestination(for: Category.self) { CategoryView(category: $0) }
+        .navigationTitle("Categories")
     }
 }
 

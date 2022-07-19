@@ -19,17 +19,20 @@ struct GlossaryTermListView: View {
 
     var body: some View {
         List(filteredTerms, id: \.term) { term in
-            NavigationLink(term.term, destination: GlossaryTermView(term: term))
+            NavigationLink(term.term, value: term)
         }
+        .navigationDestination(for: GlossaryTerm.self) { GlossaryTermView(term: $0) }
         .searchable(text: $searchTerm)
-        .onChange(of: searchTerm) { term in
-            if term.isEmpty {
-                filteredTerms = terms
-            } else {
-                filteredTerms = terms.filter { $0.term.lowercased().contains(term.lowercased()) }
-            }
-        }
+        .onChange(of: searchTerm, perform: onChange)
         .navigationTitle("Glossary")
+    }
+    
+    func onChange(_ term: String) {
+        if term.isEmpty {
+            filteredTerms = terms
+        } else {
+            filteredTerms = terms.filter { $0.term.lowercased().contains(term.lowercased()) }
+        }
     }
 }
 

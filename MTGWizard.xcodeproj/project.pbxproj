@@ -23,9 +23,9 @@
 		069813E5286F905500D00C2E /* RulebookTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E4286F905500D00C2E /* RulebookTab.swift */; };
 		069813E8286F906700D00C2E /* RulebookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813E7286F906700D00C2E /* RulebookViewModel.swift */; };
 		069813EB286F909A00D00C2E /* RulesKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813EA286F909A00D00C2E /* RulesKit.swift */; };
-		069813F0286F935900D00C2E /* SubcategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813EF286F935900D00C2E /* SubcategoriesView.swift */; };
+		069813F0286F935900D00C2E /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813EF286F935900D00C2E /* CategoryView.swift */; };
 		069813F2286F937E00D00C2E /* RuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813F1286F937E00D00C2E /* RuleView.swift */; };
-		069813F4286F950900D00C2E /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813F3286F950900D00C2E /* RulesView.swift */; };
+		069813F4286F950900D00C2E /* SubcategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813F3286F950900D00C2E /* SubcategoryView.swift */; };
 		069813F6286F9DB800D00C2E /* SearchFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813F5286F9DB800D00C2E /* SearchFilters.swift */; };
 		069813FD2871380000D00C2E /* ManaSymbolToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069813FC2871380000D00C2E /* ManaSymbolToggle.swift */; };
 		0698140128714D2C00D00C2E /* RaritySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698140028714D2C00D00C2E /* RaritySelector.swift */; };
@@ -50,6 +50,7 @@
 		2A94C9BE287C79E700E25849 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94C9BD287C79E700E25849 /* SearchView.swift */; };
 		2A9D3FC1288344DE005228CA /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D3FC0288344DE005228CA /* SettingsTab.swift */; };
 		2AA021EE2882419600DDE976 /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2AA021ED2882419600DDE976 /* ScryfallKit */; };
+		2AF0FA7E2883567B00769964 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0FA7D2883567B00769964 /* Router.swift */; };
 		2AF0FA872883729D00769964 /* CardPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF0FA862883729D00769964 /* CardPriceView.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,9 +98,9 @@
 		069813E4286F905500D00C2E /* RulebookTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookTab.swift; sourceTree = "<group>"; };
 		069813E7286F906700D00C2E /* RulebookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulebookViewModel.swift; sourceTree = "<group>"; };
 		069813EA286F909A00D00C2E /* RulesKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesKit.swift; sourceTree = "<group>"; };
-		069813EF286F935900D00C2E /* SubcategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesView.swift; sourceTree = "<group>"; };
+		069813EF286F935900D00C2E /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		069813F1286F937E00D00C2E /* RuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleView.swift; sourceTree = "<group>"; };
-		069813F3286F950900D00C2E /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		069813F3286F950900D00C2E /* SubcategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryView.swift; sourceTree = "<group>"; };
 		069813F5286F9DB800D00C2E /* SearchFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilters.swift; sourceTree = "<group>"; };
 		069813FC2871380000D00C2E /* ManaSymbolToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManaSymbolToggle.swift; sourceTree = "<group>"; };
 		0698140028714D2C00D00C2E /* RaritySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaritySelector.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		2A94C9B6287C551200E25849 /* View+TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TextFieldAlert.swift"; sourceTree = "<group>"; };
 		2A94C9BD287C79E700E25849 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		2A9D3FC0288344DE005228CA /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
+		2AF0FA7D2883567B00769964 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2AF0FA862883729D00769964 /* CardPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPriceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 				06666A782700ED4D008087EB /* Errors.swift */,
 				062A5D70265F1802009FACCB /* MTGWizardApp.swift */,
 				062A5D72265F1802009FACCB /* LandingView.swift */,
+				2AF0FA7D2883567B00769964 /* Router.swift */,
 				062A5D74265F1803009FACCB /* Assets.xcassets */,
 				062A5D79265F1803009FACCB /* Info.plist */,
 				062A5D76265F1803009FACCB /* Preview Content */,
@@ -273,9 +276,9 @@
 		069E3FE028748EDC0084C973 /* Comprehensive Rules */ = {
 			isa = PBXGroup;
 			children = (
-				069813EF286F935900D00C2E /* SubcategoriesView.swift */,
+				069813EF286F935900D00C2E /* CategoryView.swift */,
 				069813F1286F937E00D00C2E /* RuleView.swift */,
-				069813F3286F950900D00C2E /* RulesView.swift */,
+				069813F3286F950900D00C2E /* SubcategoryView.swift */,
 				069E3FE128748F1B0084C973 /* CategoriesView.swift */,
 			);
 			path = "Comprehensive Rules";
@@ -460,12 +463,13 @@
 				062A5D73265F1802009FACCB /* LandingView.swift in Sources */,
 				06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */,
 				06F77C1F26E84841005C35C0 /* ManaCostView.swift in Sources */,
+				2AF0FA7E2883567B00769964 /* Router.swift in Sources */,
 				069E3FE928749E7F0084C973 /* GlossaryTermListView.swift in Sources */,
 				0681F2C62874C7650010E1B6 /* LegalityView.swift in Sources */,
 				2A94C9B5287BC73A00E25849 /* SearchViewBody.swift in Sources */,
 				069E3FE228748F1B0084C973 /* CategoriesView.swift in Sources */,
 				069813F2286F937E00D00C2E /* RuleView.swift in Sources */,
-				069813F0286F935900D00C2E /* SubcategoriesView.swift in Sources */,
+				069813F0286F935900D00C2E /* CategoryView.swift in Sources */,
 				066A1E1A27205D2F00211FA8 /* ColorSelector.swift in Sources */,
 				2A94C9B7287C551200E25849 /* View+TextFieldAlert.swift in Sources */,
 				2A225338287B6E07005FE78E /* Array+RawRepresentable.swift in Sources */,
@@ -488,7 +492,7 @@
 				0698140128714D2C00D00C2E /* RaritySelector.swift in Sources */,
 				069813FD2871380000D00C2E /* ManaSymbolToggle.swift in Sources */,
 				060AE36326E7AD3100D8F881 /* SearchTab.swift in Sources */,
-				069813F4286F950900D00C2E /* RulesView.swift in Sources */,
+				069813F4286F950900D00C2E /* SubcategoryView.swift in Sources */,
 				060AE36A26E7B50900D8F881 /* SingleCardView.swift in Sources */,
 				069E3FE628749E160084C973 /* GlossaryTermView.swift in Sources */,
 				069813E5286F905500D00C2E /* RulebookTab.swift in Sources */,

@@ -20,8 +20,8 @@ final class RulebookViewModel: ObservableObject {
             }
         }
     }
-    @Published var rulesSearchResults = [RulebookSearchResult<AnyView>]()
-    @Published var glossarySearchResults = [RulebookSearchResult<AnyView>]()
+    @Published var rulesSearchResults = [NavigationLink<Text, Never>]()
+    @Published var glossarySearchResults = [NavigationLink<Text, Never>]()
 
     init() {
         Task {
@@ -46,22 +46,21 @@ final class RulebookViewModel: ObservableObject {
         self.glossarySearchResults = searchGlossary(glossary: rulesObj.glossary, searchTerm: searchTermInput)
     }
 
-    private func searchRules(categories: [Category], term: String) -> [RulebookSearchResult<AnyView>] {
-        var results = [RulebookSearchResult<AnyView>]()
+    private func searchRules(categories: [Category], term: String) -> [NavigationLink<Text, Never>] {
+        var results = [NavigationLink<Text, Never>]()
         let lowerTerm = term.lowercased()
 
         for category in categories {
             for subcategory in category.subcategories {
                 for rule in subcategory.rules {
                     if rule.rule.lowercased().contains(lowerTerm) {
-                        let destination = AnyView(RuleView(rule: rule))
-                        results.append(RulebookSearchResult(title: rule.label, destination: destination))
+                        let link = NavigationLink(rule.label, value: rule)
+                        results.append(link)
                     }
 
                     for subrule in rule.subrules {
                         if subrule.rule.lowercased().contains(lowerTerm) {
-                            let destination = AnyView(RuleView(rule: rule))
-                            results.append(RulebookSearchResult(title: subrule.label, destination: destination))
+                            results.append(NavigationLink(subrule.label, value: rule))
                         }
                     }
                 }
@@ -71,18 +70,18 @@ final class RulebookViewModel: ObservableObject {
         return results
     }
 
-    private func searchGlossary(glossary: [GlossaryTerm], searchTerm: String) -> [RulebookSearchResult<AnyView>] {
-        var results = [RulebookSearchResult<AnyView>]()
+    private func searchGlossary(glossary: [GlossaryTerm], searchTerm: String) -> [NavigationLink<Text, Never>] {
+        var results = [NavigationLink<Text, Never>]()
         let lowerTerm = searchTerm.lowercased()
 
         for item in glossary {
             if item.term.lowercased().contains(lowerTerm) {
-                results.append(RulebookSearchResult(title: item.term, destination: AnyView(Text(item.meanings[0]))))
+                results.append(NavigationLink(item.term, value: item))
             }
 
             for meaning in item.meanings {
                 if meaning.lowercased().contains(lowerTerm) {
-                    results.append(RulebookSearchResult(title: meaning, destination: AnyView(Text(meaning))))
+                    results.append(NavigationLink(meaning, value: item))
                 }
             }
         }
@@ -91,11 +90,7 @@ final class RulebookViewModel: ObservableObject {
     }
 }
 
-struct RulebookSearchResult<Destination> where Destination: View {
+struct RulebookSearchResult {
     let title: String
-    let destination: Destination
-
-    var navigationLink: NavigationLink<Text, Destination> {
-        NavigationLink(title, destination: destination)
-    }
+    let link: NavigationLink<Text, Never>
 }

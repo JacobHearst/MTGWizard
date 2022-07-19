@@ -8,39 +8,35 @@
 import SwiftUI
 
 struct LandingView: View {
-    enum TabSelection {
-        case search, saved, rules, settings
-    }
-    
-    @State private var tab: TabSelection = .saved
+    @State private var router = Router()
 
     var body: some View {
-        TabView(selection: $tab) {
+        TabView(selection: $router.activeTab) {
             SearchTab()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-                .tag(TabSelection.search)
+                .tag(Router.TabSelection.search)
             SavedCardsTab()
                 .tabItem {
                     Image(systemName: "tray.2.fill")
                     Text("Saved Cards")
                 }
-                .tag(TabSelection.saved)
+                .tag(Router.TabSelection.saved)
             RulebookTab()
                 .tabItem {
                     Image(systemName: "text.book.closed")
                     Text("Rulebook")
                 }
-                .tag(TabSelection.rules)
+                .tag(Router.TabSelection.rules)
             SettingsTab()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
-                .tag(TabSelection.settings)
-        }
+                .tag(Router.TabSelection.settings)
+        }.environmentObject(router)
     }
 }
 

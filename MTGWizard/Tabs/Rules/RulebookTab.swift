@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct RulebookTab: View {
+    @EnvironmentObject var router: Router
     @ObservedObject private var viewModel = RulebookViewModel()
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $router.rulebookPath) {
             if let error = viewModel.error {
                 // Show error
                 Text("Error: \(error)")
@@ -23,23 +24,26 @@ struct RulebookTab: View {
                         .disableAutocorrection(true)
                         .modifier(ClearButton(text: $viewModel.searchTermInput))
                     if viewModel.rulesSearchResults.isEmpty && viewModel.glossarySearchResults.isEmpty {
-                        NavigationLink("Comprehensive Rules", destination: CategoriesView(categories: rulesObj.rules))
-
-                        NavigationLink("Glossary", destination: GlossaryTermListView(terms: rulesObj.glossary))
+                        NavigationLink("Comprehensive Rules", value: rulesObj.rules)
+                        NavigationLink("Glossary", value: rulesObj.glossary)
                     } else {
                         Section("Rules (\(viewModel.rulesSearchResults.count))") {
-                            ForEach(viewModel.rulesSearchResults, id: \.title) { result in
-                                NavigationLink(result.title, destination: result.destination)
+                            ForEach(0..<viewModel.rulesSearchResults.count, id: \.self) { index in
+                                viewModel.rulesSearchResults[index]
                             }
                         }
 
                         Section("Glossary (\(viewModel.glossarySearchResults.count))") {
-                            ForEach(viewModel.glossarySearchResults, id: \.title) { result in
-                                NavigationLink(result.title, destination: result.destination)
+                            ForEach(0..<viewModel.glossarySearchResults.count, id: \.self) { index in
+                                viewModel.rulesSearchResults[index]
                             }
                         }
                     }
                 }
+                .navigationDestination(for: [Category].self) { CategoriesView(categories: $0) }
+                .navigationDestination(for: [GlossaryTerm].self) { GlossaryTermListView(terms: $0) }
+                .navigationDestination(for: Rule.self) { RuleView(rule: $0) }
+                .navigationDestination(for: GlossaryTerm.self) { GlossaryTermView(term: $0) }
                 .navigationTitle("Rulebook")
 
             } else {

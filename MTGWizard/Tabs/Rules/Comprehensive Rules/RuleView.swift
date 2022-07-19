@@ -20,6 +20,8 @@ struct RuleView: View {
                 Text(subrule.label)
             }
 
-        }.navigationTitle(rule.id)
+        }
+        .navigationTitle(rule.id)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

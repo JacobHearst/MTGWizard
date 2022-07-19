@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct RulesObject: Decodable {
+struct RulesObject: Decodable, Hashable {
     let rules: [Category]
     let glossary: [GlossaryTerm]
 }
 
-struct Category: Codable, Identifiable {
+struct Category: Codable, Identifiable, Hashable {
     let id: String
     let title: String
     let subcategories: [Subcategory]
@@ -23,7 +23,7 @@ struct Category: Codable, Identifiable {
     }
 }
 
-struct Subcategory: Codable, Identifiable {
+struct Subcategory: Codable, Identifiable, Hashable {
     let id: String
     let title: String
     let rules: [Rule]
@@ -33,7 +33,7 @@ struct Subcategory: Codable, Identifiable {
     }
 }
 
-struct Rule: Codable, Identifiable {
+struct Rule: Codable, Identifiable, Hashable {
     let id: String
     let rule: String
     let subrules: [Subrule]
@@ -43,7 +43,7 @@ struct Rule: Codable, Identifiable {
     }
 }
 
-struct Subrule: Codable, Identifiable {
+struct Subrule: Codable, Identifiable, Hashable {
     let id: String
     let rule: String
 
@@ -52,7 +52,7 @@ struct Subrule: Codable, Identifiable {
     }
 }
 
-struct GlossaryTerm: Codable, Identifiable {
+struct GlossaryTerm: Codable, Identifiable, Hashable {
     var id: String { term }
     let term: String
     let meanings: [String]
