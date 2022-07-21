@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ScryfallKit
 
 struct SearchFilterView: View {
     @AppStorage("UseQuerySearch") var useQuerySearch = false
@@ -80,11 +81,14 @@ struct SearchFilterView: View {
     }
     
     var metadataSection: some View {
-        Section("Metadata") {
+        Section("Print") {
             VStack(alignment: .leading) {
                 Text("Rarity")
                     .font(.headline)
-                RaritySelector(selection: $filters.rarities)
+                MultiToggleView(selection: $filters.rarities, options: Card.Rarity.allCases)
+                Text("Border Colors")
+                    .font(.headline)
+                MultiToggleView(selection: $filters.borderColors, options: BorderColor.allCases)
             }.padding([.top, .bottom])
         }
     }

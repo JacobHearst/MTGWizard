@@ -49,14 +49,20 @@ final class SearchViewModel: ObservableObject {
             .map { $0.filterString }
             .joined(separator: " ")
 
-        var query = "\(searchText)"
+        var queryParts = [String]()
+        if !searchText.isEmpty {
+            queryParts.append(searchText)
+        }
+
         if !filterString.isEmpty {
-            query += " \(filterString)"
+            queryParts.append(filterString)
         }
 
         if hideAlchemy {
-            query += " (game:paper or game:mtgo)"
+            queryParts.append("(game:paper or game:mtgo)")
         }
+        
+        let query = queryParts.joined(separator: " ")
         
         do {
             results = try await client.searchCards(query: query, order: sortMode, sortDirection: sortDirection).data

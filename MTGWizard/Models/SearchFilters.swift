@@ -44,6 +44,7 @@ struct SearchFilters {
     var colorIdentity = [ScryfallKit.Color]()
     var manaCost = ""
     var rarities = [Card.Rarity]()
+    var borderColors = [BorderColor]()
 
     var scryfallKitFilters: [CardFieldFilter] {
         var filters = [CardFieldFilter]()
@@ -51,7 +52,6 @@ struct SearchFilters {
         if !oracleText.isEmpty {
             filters.append(.oracleText(oracleText))
         }
-
 
         for type in typeLine.split(separator: " ") {
             filters.append(.type(String(type)))
@@ -86,6 +86,11 @@ struct SearchFilters {
         
         if !flavorText.isEmpty {
             filters.append(.flavor(flavorText))
+        }
+        
+        if !borderColors.isEmpty {
+            let borderFilters: [CardFieldFilter] = borderColors.map { .border($0) }
+            filters.append(.compoundOr(borderFilters))
         }
 
         return filters
