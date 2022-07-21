@@ -14,7 +14,7 @@ final class Router: ObservableObject {
         case search, saved, rules, settings
     }
     
-    @Published var activeTab: TabSelection = .saved
+    @Published var activeTab: TabSelection = .search
 
     // have the card list view actually just change the tab to search
     @Published var searchPath = NavigationPath()

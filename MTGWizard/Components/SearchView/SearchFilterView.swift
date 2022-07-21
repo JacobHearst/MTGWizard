@@ -86,11 +86,15 @@ struct SearchFilterView: View {
                 Text("Rarity")
                     .font(.headline)
                 MultiToggleView(selection: $filters.rarities, options: Card.Rarity.allCases)
-                Text("Border Colors")
+                Text("Border Color")
                     .font(.headline)
-                MultiToggleView(selection: $filters.borderColors, options: BorderColor.allCases)
+                MultiToggleView(selection: $filters.borderColors, options: supportedBorderColors)
             }.padding([.top, .bottom])
         }
+    }
+    
+    var supportedBorderColors: [BorderColor] {
+        BorderColor.allCases.filter { $0 != .gold }
     }
 }
 
