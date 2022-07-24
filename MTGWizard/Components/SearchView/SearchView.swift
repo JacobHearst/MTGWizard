@@ -45,9 +45,3 @@ struct SearchView: View {
         Task { await viewModel.search() }
     }
 }
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}

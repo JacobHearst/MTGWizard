@@ -36,6 +36,8 @@
 		06BFD8C3271B842A00DCF862 /* SearchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFD8C2271B842A00DCF862 /* SearchFilterView.swift */; };
 		06F77C0626E7F6D5005C35C0 /* CardDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C0526E7F6D5005C35C0 /* CardDescription.swift */; };
 		06F77C1F26E84841005C35C0 /* ManaCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F77C1E26E84841005C35C0 /* ManaCostView.swift */; };
+		2A15B7A3288D766700C851D5 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A15B7A2288D766700C851D5 /* CachedAsyncImage */; };
+		2A15B7A5288D768400C851D5 /* CardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15B7A4288D768400C851D5 /* CardImage.swift */; };
 		2A225338287B6E07005FE78E /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A225337287B6E07005FE78E /* Array+RawRepresentable.swift */; };
 		2A2C898E28870B5200C428FB /* MultiToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C898D28870B5200C428FB /* MultiToggleView.swift */; };
 		2A2C89902887153100C428FB /* StringRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2C898F2887153100C428FB /* StringRepresentable.swift */; };
@@ -106,6 +108,7 @@
 		06E7FC7C270534F100802AC0 /* MTGWizardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTGWizardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F77C0526E7F6D5005C35C0 /* CardDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDescription.swift; sourceTree = "<group>"; };
 		06F77C1E26E84841005C35C0 /* ManaCostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManaCostView.swift; sourceTree = "<group>"; };
+		2A15B7A4288D768400C851D5 /* CardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImage.swift; sourceTree = "<group>"; };
 		2A225337287B6E07005FE78E /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
 		2A2C898D28870B5200C428FB /* MultiToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiToggleView.swift; sourceTree = "<group>"; };
 		2A2C898F2887153100C428FB /* StringRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRepresentable.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AA021EE2882419600DDE976 /* ScryfallKit in Frameworks */,
+				2A15B7A3288D766700C851D5 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +223,7 @@
 				069E3FEA2874A1290084C973 /* ClearButton.swift */,
 				060AE36426E7B10700D8F881 /* CardGrid.swift */,
 				2A3EC6F0288490F600E69D4D /* CardSortControls.swift */,
+				2A15B7A4288D768400C851D5 /* CardImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			name = MTGWizard;
 			packageProductDependencies = (
 				2AA021ED2882419600DDE976 /* ScryfallKit */,
+				2A15B7A2288D766700C851D5 /* CachedAsyncImage */,
 			);
 			productName = MTGWizard;
 			productReference = 062A5D6D265F1802009FACCB /* MTGWizard.app */;
@@ -388,6 +394,7 @@
 			mainGroup = 062A5D64265F1802009FACCB;
 			packageReferences = (
 				2AA021EC2882419600DDE976 /* XCRemoteSwiftPackageReference "ScryfallKit" */,
+				2A15B7A1288D766700C851D5 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
 			productRefGroup = 062A5D6E265F1802009FACCB /* Products */;
 			projectDirPath = "";
@@ -454,6 +461,7 @@
 				06BFD8C3271B842A00DCF862 /* SearchFilterView.swift in Sources */,
 				062A5D71265F1802009FACCB /* MTGWizardApp.swift in Sources */,
 				0681F2D3287524830010E1B6 /* SavedCardsTab.swift in Sources */,
+				2A15B7A5288D768400C851D5 /* CardImage.swift in Sources */,
 				069813FD2871380000D00C2E /* ManaSymbolToggle.swift in Sources */,
 				060AE36326E7AD3100D8F881 /* SearchTab.swift in Sources */,
 				069813F4286F950900D00C2E /* SubcategoryView.swift in Sources */,
@@ -726,6 +734,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A15B7A1288D766700C851D5 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		2AA021EC2882419600DDE976 /* XCRemoteSwiftPackageReference "ScryfallKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JacobHearst/ScryfallKit";
@@ -737,6 +753,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A15B7A2288D766700C851D5 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A15B7A1288D766700C851D5 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
 		2AA021ED2882419600DDE976 /* ScryfallKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2AA021EC2882419600DDE976 /* XCRemoteSwiftPackageReference "ScryfallKit" */;

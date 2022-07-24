@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ScryfallKit
+import CachedAsyncImage
 
 struct SingleCardView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -55,8 +56,8 @@ struct SingleCardView: View {
     }
     
     func buildAsyncImage(geometry: GeometryProxy) -> some View {
-        if let url = printing.getImageURL(types: [.png, .normal], getSecondFace: viewingSecondFace) {
-            return AnyView(AsyncImage(url: url, content: { image in
+        if let url = printing.getImageURL(types: [.normal, .png], getSecondFace: viewingSecondFace) {
+            return AnyView(CachedAsyncImage(url: url, content: { image in
                 self.resizeCardImage(geometry: geometry, image: image)
             }) { ProgressView() })
         } else {
@@ -69,6 +70,7 @@ struct SingleCardView: View {
             .resizable()
             .scaledToFit()
             .rotationEffect(cardRotationAngle)
+            .cornerRadius(10)
         
         if viewingSecondFace && ![.transform, .flip, .modalDfc].contains(printing.layout) {
             return newImage.frame(maxHeight: geometry.size.width * 0.9)

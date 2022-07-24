@@ -9,7 +9,6 @@ import SwiftUI
 import ScryfallKit
 
 struct SearchFilterView: View {
-    @AppStorage("UseQuerySearch") var useQuerySearch = false
     @Binding var showFilters: Bool
     @Binding var filters: SearchFilters
     
@@ -33,11 +32,9 @@ struct SearchFilterView: View {
     var textSection: some View {
         Section("Card Text") {
             VStack(alignment: .leading) {
-                if useQuerySearch {
-                    Text("Name")
-                        .font(.headline)
-                    TextField("Name", text: $filters.name)
-                }
+                Text("Name")
+                    .font(.headline)
+                TextField("Name", text: $filters.name)
                 Text("Text")
                     .font(.headline)
                 TextField("Any rules text (e.g. 'exile target')", text: $filters.oracleText)
@@ -86,6 +83,8 @@ struct SearchFilterView: View {
                 Text("Rarity")
                     .font(.headline)
                 MultiToggleView(selection: $filters.rarities, options: Card.Rarity.allCases)
+                    .padding(.bottom, 10)
+                Divider()
                 Text("Border Color")
                     .font(.headline)
                 MultiToggleView(selection: $filters.borderColors, options: supportedBorderColors)

@@ -10,8 +10,10 @@ import ScryfallKit
 
 struct SavedCardsTab: View {
     @AppStorage("SavedCards") var savedCards = [Card]()
-    @State private var showSearch = false
+    
     @EnvironmentObject var router: Router
+
+    @State private var showSearch = false
     
     var body: some View {
         NavigationStack(path: $router.savedCardsPath) {

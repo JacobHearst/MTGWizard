@@ -14,14 +14,10 @@ final class Router: ObservableObject {
         case search, saved, rules, settings
     }
     
-    @Published var activeTab: TabSelection = .search
+    @Published var activeTab: TabSelection = .saved
 
     // have the card list view actually just change the tab to search
     @Published var searchPath = NavigationPath()
     @Published var savedCardsPath = NavigationPath()
     @Published var rulebookPath = NavigationPath()
-    
-    func switchTab(to tab: TabSelection) {
-        activeTab = tab
-    }
 }
